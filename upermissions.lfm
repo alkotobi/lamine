@@ -1,0 +1,145 @@
+object frm_groups: Tfrm_groups
+  Left = 293
+  Height = 407
+  Top = 250
+  Width = 791
+  Caption = 'frm_groups'
+  ClientHeight = 407
+  ClientWidth = 791
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  Position = poDesktopCenter
+  object DBGrid1: TDBGrid
+    Left = 8
+    Height = 120
+    Top = 16
+    Width = 392
+    Color = clWindow
+    Columns = <    
+      item
+        ReadOnly = True
+        Title.Caption = 'id'
+        Width = 60
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'name'
+        Width = 220
+        FieldName = 'name'
+      end>
+    DataSource = dts_groups
+    TabOrder = 0
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 8
+    Height = 25
+    Top = 136
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dtm.dts_groups
+    Options = []
+    TabOrder = 1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbEdit, nbPost, nbCancel, nbRefresh]
+  end
+  object Panel1: TPanel
+    Left = 32
+    Height = 146
+    Top = 176
+    Width = 296
+    ClientHeight = 146
+    ClientWidth = 296
+    TabOrder = 2
+    object can_confirm_: TDBCheckBox
+      Left = 16
+      Height = 23
+      Top = 32
+      Width = 217
+      Caption = 'can_confirm_receive'
+      DataField = 'can_confirm_receive'
+      DataSource = dts_permissions
+      TabOrder = 0
+      ValueUnchecked = '0'
+    end
+    object can_confirm_1: TDBCheckBox
+      Left = 17
+      Height = 23
+      Top = 8
+      Width = 217
+      Caption = 'can_confirm_send'
+      DataField = 'can_confirm_send'
+      DataSource = dts_permissions
+      TabOrder = 1
+      ValueUnchecked = '0'
+    end
+    object can_confirm_2: TDBCheckBox
+      Left = 16
+      Height = 23
+      Top = 80
+      Width = 217
+      Caption = 'can_confirm_will_send'
+      DataField = 'can_confirm_will_send'
+      DataSource = dts_permissions
+      TabOrder = 2
+      ValueUnchecked = '0'
+    end
+    object can_confirm_3: TDBCheckBox
+      Left = 16
+      Height = 23
+      Top = 56
+      Width = 217
+      Caption = 'can_change_groups'
+      DataField = 'can_change_groups'
+      DataSource = dts_permissions
+      TabOrder = 3
+      ValueUnchecked = '0'
+    end
+    object can_confirm_4: TDBCheckBox
+      Left = 17
+      Height = 23
+      Top = 104
+      Width = 217
+      Caption = 'can_change_users'
+      DataField = 'can_change_users'
+      DataSource = dts_permissions
+      TabOrder = 4
+      ValueUnchecked = '0'
+    end
+  end
+  object btn_save: TButton
+    Left = 256
+    Height = 25
+    Top = 336
+    Width = 75
+    Caption = 'SAVE'
+    TabOrder = 3
+    OnClick = btn_saveClick
+  end
+  object btn_cancel: TButton
+    Left = 176
+    Height = 25
+    Top = 336
+    Width = 75
+    Caption = 'CANCEL'
+    TabOrder = 4
+    OnClick = btn_cancelClick
+  end
+  object dts_groups: TDataSource
+    DataSet = dtm.qry_groups
+    Left = 328
+    Top = 96
+  end
+  object dts_permissions: TDataSource
+    DataSet = dtm.qry_permissionns
+    Left = 336
+    Top = 40
+  end
+end

@@ -1,0 +1,80 @@
+object frm_users: Tfrm_users
+  Left = 293
+  Height = 272
+  Top = 250
+  Width = 640
+  Caption = 'frm_users'
+  ClientHeight = 272
+  ClientWidth = 640
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 640
+    Align = alTop
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        Width = 30
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'name'
+        Width = 250
+        FieldName = 'name'
+      end    
+      item
+        Title.Caption = 'password'
+        Width = 150
+        FieldName = 'password'
+      end    
+      item
+        Title.Caption = 'active'
+        FieldName = 'active'
+      end    
+      item
+        Title.Caption = 'id_group'
+        Visible = False
+        FieldName = 'id_group'
+      end    
+      item
+        PickList.Strings = (
+          'admin'
+        )
+        Title.Caption = 'group'
+        Width = 100
+        FieldName = 'group'
+      end>
+    DataSource = dts_users
+    TabOrder = 0
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 192
+    Height = 25
+    Top = 192
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dts_users
+    Options = []
+    TabOrder = 1
+  end
+  object dts_users: TDataSource
+    DataSet = dtm.qry_users
+    Left = 576
+    Top = 56
+  end
+end

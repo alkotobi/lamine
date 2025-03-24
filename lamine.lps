@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="win"/>
+    <Units>
+      <Unit>
+        <Filename Value="lamine.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="3"/>
+        <CursorPos Y="19"/>
+        <UsageCount Value="73"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_main"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="48"/>
+        <CursorPos X="26" Y="62"/>
+        <UsageCount Value="73"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ulogin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_login"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="67"/>
+        <CursorPos Y="86"/>
+        <UsageCount Value="73"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="udtm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dtm_login"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="20" Y="3"/>
+        <UsageCount Value="73"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="udtm_main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dtm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="54"/>
+        <CursorPos X="3" Y="67"/>
+        <UsageCount Value="48"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="upermissions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_groups"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="35"/>
+        <CursorPos X="34" Y="54"/>
+        <UsageCount Value="48"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uchange_pass.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_change_pass"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="43"/>
+        <CursorPos X="10" Y="61"/>
+        <UsageCount Value="47"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uusers.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_users"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="6"/>
+        <UsageCount Value="41"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utransactions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_transactions"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="75"/>
+        <CursorPos X="23" Y="77"/>
+        <UsageCount Value="40"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ustart.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_start"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="70"/>
+        <CursorPos X="9" Y="87"/>
+        <UsageCount Value="37"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utransfer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_transfer"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="70"/>
+        <CursorPos X="13" Y="77"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utreceive.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_receive"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="72"/>
+        <CursorPos X="15" Y="77"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../fpcupdeluxe/lazarus/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2964"/>
+        <CursorPos Y="2974"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ustart copy.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ustart copy.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="115" Column="55" TopLine="101"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="113" Column="69" TopLine="101"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="119" Column="3" TopLine="101"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="110" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="111" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="113" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="115" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="118" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="108" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="110" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="111" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="113" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="115" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="118" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="108" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="110" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="111" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="113" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="118" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="108" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="110" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="111" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="113" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="118" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="108" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="116" TopLine="113"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="119" Column="9" TopLine="110"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="93" TopLine="114"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="87" Column="8" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="163" TopLine="147"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

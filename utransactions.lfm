@@ -1,0 +1,339 @@
+object frm_transactions: Tfrm_transactions
+  Left = 293
+  Height = 603
+  Top = 250
+  Width = 1051
+  Caption = 'frm_transactions'
+  ClientHeight = 603
+  ClientWidth = 1051
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  OnCreate = FormCreate
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 192
+    Top = 50
+    Width = 1051
+    Align = alTop
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'amount DA'
+        FieldName = 'amount'
+      end    
+      item
+        Title.Caption = 'rate'
+        FieldName = 'rate'
+      end    
+      item
+        Title.Caption = 'amount usd'
+        FieldName = 'amount_usd'
+      end    
+      item
+        Title.Caption = 'amount received'
+        FieldName = 'amount_received'
+      end    
+      item
+        Title.Caption = 'date give DA'
+        FieldName = 'date_will_send'
+      end    
+      item
+        Title.Caption = 'date transfer'
+        FieldName = 'date_send'
+      end    
+      item
+        Title.Caption = 'date receive'
+        FieldName = 'date_receive'
+      end    
+      item
+        PickList.Strings = (
+          'admin'
+          'sofia'
+          'ishaq'
+          'mimo'
+        )
+        Title.Caption = 'name user give DA'
+        FieldName = 'name_user_will_send'
+      end    
+      item
+        PickList.Strings = (
+          'admin'
+          'sofia'
+          'ishaq'
+          'mimo'
+        )
+        Title.Caption = 'name user transfer'
+        FieldName = 'name_user_send'
+      end    
+      item
+        PickList.Strings = (
+          'admin'
+          'sofia'
+          'ishaq'
+          'mimo'
+        )
+        Title.Caption = 'name user receive'
+        FieldName = 'name_user_receive'
+      end>
+    DataSource = dts_transactions
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object pnl_start: TPanel
+    Left = 0
+    Height = 361
+    Top = 242
+    Width = 378
+    Align = alLeft
+    ClientHeight = 361
+    ClientWidth = 378
+    TabOrder = 1
+    object DBEdit1: TDBEdit
+      Left = 168
+      Height = 32
+      Top = 16
+      Width = 184
+      DataField = 'amount'
+      DataSource = dts_transactions
+      ReadOnly = True
+      Alignment = taRightJustify
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label1: TLabel
+      Left = 16
+      Height = 22
+      Top = 16
+      Width = 111
+      Caption = 'AMOUNT DA'
+    end
+    object DBEdit2: TDBEdit
+      Left = 168
+      Height = 32
+      Top = 56
+      Width = 184
+      DataField = 'date_will_send'
+      DataSource = dts_transactions
+      ReadOnly = True
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 22
+      Top = 56
+      Width = 116
+      Caption = 'DATE GET DA'
+    end
+    object Button1: TButton
+      Left = 160
+      Height = 25
+      Top = 304
+      Width = 112
+      Caption = 'NEW DA'
+      TabOrder = 2
+      OnClick = Button1Click
+    end
+    object DBMemo3: TDBMemo
+      Left = 32
+      Height = 162
+      Top = 136
+      Width = 336
+      DataField = 'will_send_notes'
+      DataSource = dts_transactions
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 3
+    end
+    object Label7: TLabel
+      Left = 42
+      Height = 22
+      Top = 107
+      Width = 61
+      Caption = 'NOTES'
+    end
+  end
+  object pnl_send: TPanel
+    Left = 378
+    Height = 361
+    Top = 242
+    Width = 350
+    Align = alLeft
+    ClientHeight = 361
+    ClientWidth = 350
+    TabOrder = 2
+    object DBEdit3: TDBEdit
+      Left = 168
+      Height = 32
+      Top = 16
+      Width = 152
+      DataField = 'date_send'
+      DataSource = dts_transactions
+      ReadOnly = True
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 22
+      Top = 16
+      Width = 144
+      Caption = 'DATE TRANSFER'
+    end
+    object Button3: TButton
+      Left = 72
+      Height = 25
+      Top = 312
+      Width = 216
+      Caption = 'VALIDATE TRANSFER'
+      TabOrder = 1
+      OnClick = Button3Click
+    end
+    object Label5: TLabel
+      Left = 16
+      Height = 22
+      Top = 56
+      Width = 45
+      Caption = 'RATE'
+    end
+    object DBEdit5: TDBEdit
+      Left = 168
+      Height = 32
+      Top = 56
+      Width = 152
+      DataField = 'rate'
+      DataSource = dts_transactions
+      ReadOnly = True
+      Alignment = taRightJustify
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object DBMemo2: TDBMemo
+      Left = 8
+      Height = 162
+      Top = 136
+      Width = 304
+      DataField = 'send_notes'
+      DataSource = dts_transactions
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 3
+    end
+    object Label8: TLabel
+      Left = 16
+      Height = 22
+      Top = 107
+      Width = 61
+      Caption = 'NOTES'
+    end
+  end
+  object pnl_receive: TPanel
+    Left = 728
+    Height = 361
+    Top = 242
+    Width = 325
+    Align = alLeft
+    ClientHeight = 361
+    ClientWidth = 325
+    TabOrder = 3
+    object Label4: TLabel
+      Left = 8
+      Height = 22
+      Top = 8
+      Width = 168
+      Caption = 'DATE RECEIVE USD'
+    end
+    object DBEdit4: TDBEdit
+      Left = 8
+      Height = 32
+      Top = 32
+      Width = 184
+      DataField = 'date_receive'
+      DataSource = dts_transactions
+      ReadOnly = True
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label6: TLabel
+      Left = 8
+      Height = 22
+      Top = 64
+      Width = 216
+      Caption = 'AMOUNT RECEIVED USD'
+    end
+    object DBEdit6: TDBEdit
+      Left = 8
+      Height = 32
+      Top = 88
+      Width = 184
+      DataField = 'rate'
+      DataSource = dts_transactions
+      ReadOnly = True
+      Alignment = taRightJustify
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Button2: TButton
+      Left = 48
+      Height = 25
+      Top = 328
+      Width = 208
+      Caption = 'VALIDATE RECEIVE'
+      TabOrder = 2
+      OnClick = Button2Click
+    end
+    object DBMemo1: TDBMemo
+      Left = 8
+      Height = 162
+      Top = 160
+      Width = 304
+      DataField = 'receive_notes'
+      DataSource = dts_transactions
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 3
+    end
+    object Label9: TLabel
+      Left = 16
+      Height = 22
+      Top = 128
+      Width = 61
+      Caption = 'NOTES'
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 1051
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 1051
+    TabOrder = 4
+    object cmb_will_send: TComboBox
+      Left = 176
+      Height = 20
+      Top = 14
+      Width = 100
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 29
+      TabOrder = 0
+      OnChange = cmb_will_sendChange
+      OnEnter = cmb_will_sendEnter
+    end
+    object Label10: TLabel
+      Left = 42
+      Height = 22
+      Top = 14
+      Width = 121
+      Caption = 'WHO GIVE DA'
+    end
+  end
+  object dts_transactions: TDataSource
+    DataSet = dtm.qry_transactions
+    Left = 552
+    Top = 136
+  end
+end

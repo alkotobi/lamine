@@ -1,0 +1,79 @@
+object frm_change_pass: Tfrm_change_pass
+  Left = 293
+  Height = 182
+  Top = 250
+  Width = 496
+  Caption = 'frm_change_pass'
+  ClientHeight = 182
+  ClientWidth = 496
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  Position = poDesktopCenter
+  object edt_old: TEdit
+    Left = 160
+    Height = 32
+    Top = 16
+    Width = 312
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 0
+  end
+  object edt_new: TEdit
+    Left = 160
+    Height = 32
+    Top = 56
+    Width = 312
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object edt_confirm: TEdit
+    Left = 160
+    Height = 32
+    Top = 96
+    Width = 312
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 11
+    Height = 22
+    Top = 24
+    Width = 89
+    Caption = 'OLD PASS'
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 22
+    Top = 64
+    Width = 93
+    Caption = 'NEW PASS'
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 22
+    Top = 104
+    Width = 139
+    Caption = 'CONFIRM  PASS'
+  end
+  object Button1: TButton
+    Left = 368
+    Height = 25
+    Top = 147
+    Width = 104
+    Caption = 'CONFIRM'
+    TabOrder = 3
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 240
+    Height = 25
+    Top = 147
+    Width = 107
+    Caption = 'CANCEL'
+    TabOrder = 4
+    OnClick = Button2Click
+  end
+end

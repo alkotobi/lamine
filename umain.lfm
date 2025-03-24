@@ -1,0 +1,107 @@
+object frm_main: Tfrm_main
+  Left = 293
+  Height = 308
+  Top = 250
+  Width = 616
+  Caption = 'frm_main'
+  ClientHeight = 308
+  ClientWidth = 616
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  Menu = MainMenu1
+  Position = poDesktopCenter
+  object Panel1: TPanel
+    Left = 0
+    Height = 308
+    Top = 0
+    Width = 170
+    Align = alLeft
+    ClientHeight = 308
+    ClientWidth = 170
+    TabOrder = 0
+    object Button1: TButton
+      Left = 1
+      Height = 25
+      Top = 1
+      Width = 168
+      Action = act_transactions
+      Align = alTop
+      TabOrder = 0
+    end
+  end
+  object DBEdit1: TDBEdit
+    Left = 312
+    Height = 32
+    Top = 80
+    Width = 80
+    DataField = 'count_zero_users'
+    DataSource = DataSource1
+    ReadOnly = True
+    Alignment = taRightJustify
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = 9983
+    Font.Height = -19
+    Font.Name = '.SF NS'
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 224
+    Height = 22
+    Top = 48
+    Width = 256
+    Caption = 'UNFINISHE TRANSACTIOONS'
+  end
+  object act: TActionList
+    OnUpdate = actUpdate
+    Left = 256
+    Top = 144
+    object act_groups: TAction
+      Caption = 'GROUPS'
+      OnExecute = act_groupsExecute
+    end
+    object act_change_pass: TAction
+      Caption = 'CHANGE PASS'
+      OnExecute = act_change_passExecute
+    end
+    object act_users: TAction
+      Caption = 'USERRS'
+      OnExecute = act_usersExecute
+    end
+    object act_transactions: TAction
+      Caption = 'TRANSACTIONS'
+      OnExecute = act_transactionsExecute
+      ShortCut = 16468
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 36
+    Top = 36
+    object MenuItem5: TMenuItem
+      Caption = 'FILE'
+      object MenuItem6: TMenuItem
+        Action = act_transactions
+      end
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'PARAMS'
+      object MenuItem2: TMenuItem
+        Action = act_groups
+      end
+      object MenuItem3: TMenuItem
+        Action = act_change_pass
+        OnClick = MenuItem3Click
+      end
+      object MenuItem4: TMenuItem
+        Action = act_users
+      end
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = dtm.qry_count_zero
+    Left = 497
+    Top = 153
+  end
+end

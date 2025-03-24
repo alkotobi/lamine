@@ -1,0 +1,316 @@
+object dtm: Tdtm
+  OldCreateOrder = False
+  Height = 328
+  HorizontalOffset = 293
+  VerticalOffset = 250
+  Width = 717
+  object qry_permissionns: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_permissions'
+    )
+    MasterSource = dts_groups
+    MasterFields = 'id'
+    DetailFields = 'id_group'
+    Active = True
+    FilterOptions = []
+    Left = 80
+    Top = 56
+    ParamData = <    
+      item
+        DataType = ftLargeint
+        Name = 'id'
+        ParamType = ptInput
+      end>
+  end
+  object qry_groups: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from `tbl_groups`'
+    )
+    Active = True
+    FilterOptions = []
+    Left = 224
+    Top = 56
+  end
+  object dts_groups: TDataSource
+    DataSet = qry_groups
+    Left = 216
+    Top = 144
+  end
+  object qry_users: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from `tbl_users`'
+    )
+    Active = True
+    FilterOptions = []
+    Left = 336
+    Top = 72
+    object qry_usersid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_usersname: TWideStringField
+      FieldKind = fkData
+      FieldName = 'name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 255
+    end
+    object qry_userspassword: TWideStringField
+      FieldKind = fkData
+      FieldName = 'password'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 255
+    end
+    object qry_usersactive: TBooleanField
+      FieldKind = fkData
+      FieldName = 'active'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qry_usersid_group: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_group'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object group_name: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'group'
+      Index = 5
+      KeyFields = 'id_group'
+      LookupCache = False
+      LookupDataSet = qry_groups
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qry_transactions: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_transactions'
+    )
+    Active = True
+    FilterOptions = []
+    OnCalcFields = qry_transactionsCalcFields
+    Left = 408
+    Top = 56
+    object qry_transactionsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_transactionsid_user_will_send: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_user_will_send'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_transactionsid_user_send: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_user_send'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_transactionsid_user_receive: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_user_receive'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_transactionsamount: TFloatField
+      FieldKind = fkData
+      FieldName = 'amount'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayFormat = '0.00'
+      Precision = 10
+    end
+    object qry_transactionsdate_will_send: TDateField
+      FieldKind = fkData
+      FieldName = 'date_will_send'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_transactionsdate_send: TDateField
+      FieldKind = fkData
+      FieldName = 'date_send'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_transactionsdate_receive: TDateField
+      FieldKind = fkData
+      FieldName = 'date_receive'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_transactionswill_send_notes: TWideMemoField
+      FieldKind = fkData
+      FieldName = 'will_send_notes'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftWideMemo
+    end
+    object qry_transactionssend_notess: TWideMemoField
+      FieldKind = fkData
+      FieldName = 'send_notes'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftWideMemo
+    end
+    object qry_transactionsreceive_notes: TWideMemoField
+      FieldKind = fkData
+      FieldName = 'receive_notes'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftWideMemo
+    end
+    object TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'name_user_will_send'
+      Index = 11
+      KeyFields = 'id_user_will_send'
+      LookupCache = False
+      LookupDataSet = qry_users
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'name_user_send'
+      Index = 12
+      KeyFields = 'id_user_send'
+      LookupCache = False
+      LookupDataSet = qry_users
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'name_user_receive'
+      Index = 13
+      KeyFields = 'id_user_receive'
+      LookupCache = False
+      LookupDataSet = qry_users
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_transactionsamount_received: TFloatField
+      FieldKind = fkData
+      FieldName = 'amount_received'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 10
+    end
+    object qry_transactionsrate: TFloatField
+      FieldKind = fkData
+      FieldName = 'rate'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 10
+    end
+    object qry_transactionsamount_usd: TCurrencyField
+      FieldKind = fkCalculated
+      FieldName = 'amount_usd'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qry_count_zero: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'SELECT COUNT(*) AS count_zero_users'
+      'FROM tbl_transactions'
+      'WHERE id_user_send = 0 AND id_user_receive = 0;'
+    )
+    Active = True
+    FilterOptions = []
+    Left = 504
+    Top = 128
+    object qry_count_zerocount_zero_users: TLargeintField
+      FieldKind = fkData
+      FieldName = 'count_zero_users'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = True
+    end
+  end
+end
