@@ -2,13 +2,14 @@
 <CONFIG>
   <ProjectSession>
     <Version Value="12"/>
-    <BuildModes Active="win"/>
+    <BuildModes Active="Default"/>
     <Units>
       <Unit>
         <Filename Value="lamine.lpr"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="3"/>
+        <TopLine Value="5"/>
         <CursorPos Y="19"/>
         <UsageCount Value="73"/>
         <Loaded Value="True"/>
@@ -106,10 +107,9 @@
         <ComponentName Value="frm_transactions"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="75"/>
-        <CursorPos X="23" Y="77"/>
+        <TopLine Value="64"/>
+        <CursorPos X="6" Y="68"/>
         <UsageCount Value="40"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -172,7 +172,7 @@
         <UsageCount Value="10"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
+    <JumpHistory HistoryIndex="28">
       <Position>
         <Filename Value="utransactions.pas"/>
         <Caret Line="115" Column="55" TopLine="101"/>
@@ -280,10 +280,6 @@
       <Position>
         <Filename Value="utransactions.pas"/>
         <Caret Line="119" Column="9" TopLine="110"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="93" TopLine="114"/>
       </Position>
       <Position>
         <Filename Value="utransactions.pas"/>

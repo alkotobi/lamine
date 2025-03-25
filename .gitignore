@@ -16,3 +16,5 @@ lib/x86_64-win64/
 *.res
 
 lamine
+
+lib/aarch64-darwin/
