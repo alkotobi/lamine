@@ -30,10 +30,10 @@ implementation
 {$R *.lfm}
 
 { Tfrm_users }
-
+uses udtm_main;
 procedure Tfrm_users.FormCreate(Sender: TObject);
 begin
-
+  dtm.qry_users.Open;
 end;
 
 end.

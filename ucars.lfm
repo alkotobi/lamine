@@ -1,0 +1,309 @@
+object frm_cars: Tfrm_cars
+  Left = 333
+  Height = 515
+  Top = 250
+  Width = 508
+  Caption = 'frm_cars'
+  ClientHeight = 515
+  ClientWidth = 508
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  OnCreate = FormCreate
+  object Panel1: TPanel
+    Left = 0
+    Height = 136
+    Top = 0
+    Width = 508
+    Align = alTop
+    ClientHeight = 136
+    ClientWidth = 508
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 1
+      Height = 22
+      Top = 113
+      Width = 506
+      Align = alBottom
+      AutoSize = True
+      ClientHeight = 22
+      ClientWidth = 506
+      TabOrder = 0
+      object DBNavigator1: TDBNavigator
+        Left = 1
+        Height = 20
+        Top = 1
+        Width = 241
+        Align = alLeft
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 20
+        ClientWidth = 241
+        DataSource = dts_brands
+        Options = []
+        TabOrder = 0
+      end
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 90
+      Top = 23
+      Width = 506
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'id'
+          Visible = False
+          FieldName = 'id'
+        end      
+        item
+          Title.Caption = 'brand'
+          Width = 250
+          FieldName = 'brand'
+        end>
+      DataSource = dts_brands
+      TabOrder = 1
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 22
+      Top = 1
+      Width = 506
+      Align = alTop
+      AutoSize = True
+      BevelOuter = bvNone
+      ClientHeight = 22
+      ClientWidth = 506
+      TabOrder = 2
+      object Label1: TLabel
+        Left = 0
+        Height = 22
+        Top = 0
+        Width = 80
+        Caption = 'BRANDS:'
+      end
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Height = 208
+    Top = 272
+    Width = 508
+    Align = alTop
+    ClientHeight = 208
+    ClientWidth = 508
+    TabOrder = 1
+    object Panel5: TPanel
+      Left = 1
+      Height = 22
+      Top = 185
+      Width = 506
+      Align = alBottom
+      AutoSize = True
+      ClientHeight = 22
+      ClientWidth = 506
+      TabOrder = 0
+      object DBNavigator2: TDBNavigator
+        Left = 1
+        Height = 20
+        Top = 1
+        Width = 241
+        Align = alLeft
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 20
+        ClientWidth = 241
+        DataSource = dts_models
+        Options = []
+        TabOrder = 0
+      end
+    end
+    object DBGrid2: TDBGrid
+      Left = 1
+      Height = 162
+      Top = 23
+      Width = 269
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'id'
+          Visible = False
+          FieldName = 'id'
+        end      
+        item
+          Title.Caption = 'model'
+          Width = 250
+          FieldName = 'model'
+        end      
+        item
+          Title.Caption = 'id_car_name'
+          Visible = False
+          FieldName = 'id_car_name'
+        end      
+        item
+          Title.Caption = 'notes'
+          Visible = False
+          FieldName = 'notes'
+        end>
+      DataSource = dts_models
+      TabOrder = 1
+    end
+    object Panel6: TPanel
+      Left = 1
+      Height = 22
+      Top = 1
+      Width = 506
+      Align = alTop
+      AutoSize = True
+      BevelOuter = bvNone
+      ClientHeight = 22
+      ClientWidth = 506
+      TabOrder = 2
+      object Label2: TLabel
+        Left = 0
+        Height = 22
+        Top = 0
+        Width = 81
+        Caption = 'MODELS:'
+      end
+    end
+    object Panel10: TPanel
+      Left = 270
+      Height = 162
+      Top = 23
+      Width = 237
+      Align = alRight
+      ClientHeight = 162
+      ClientWidth = 237
+      TabOrder = 3
+      object Label4: TLabel
+        Left = 7
+        Height = 22
+        Top = 7
+        Width = 61
+        Caption = 'NOTES'
+      end
+      object DBMemo1: TDBMemo
+        Left = 7
+        Height = 128
+        Top = 32
+        Width = 225
+        DataField = 'notes'
+        DataSource = dts_models
+        TabOrder = 0
+      end
+    end
+  end
+  object Panel7: TPanel
+    Left = 0
+    Height = 136
+    Top = 136
+    Width = 508
+    Align = alTop
+    ClientHeight = 136
+    ClientWidth = 508
+    TabOrder = 2
+    object Panel8: TPanel
+      Left = 1
+      Height = 22
+      Top = 113
+      Width = 506
+      Align = alBottom
+      AutoSize = True
+      ClientHeight = 22
+      ClientWidth = 506
+      TabOrder = 0
+      object DBNavigator3: TDBNavigator
+        Left = 1
+        Height = 20
+        Top = 1
+        Width = 241
+        Align = alLeft
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 20
+        ClientWidth = 241
+        DataSource = dts_cars
+        Options = []
+        TabOrder = 0
+      end
+    end
+    object DBGrid3: TDBGrid
+      Left = 1
+      Height = 90
+      Top = 23
+      Width = 506
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'id'
+          Visible = False
+          FieldName = 'id'
+        end      
+        item
+          Title.Caption = 'name'
+          Width = 250
+          FieldName = 'name'
+        end      
+        item
+          Title.Caption = 'id_brand'
+          Visible = False
+          FieldName = 'id_brand'
+        end>
+      DataSource = dts_cars
+      TabOrder = 1
+    end
+    object Panel9: TPanel
+      Left = 1
+      Height = 22
+      Top = 1
+      Width = 506
+      Align = alTop
+      AutoSize = True
+      BevelOuter = bvNone
+      ClientHeight = 22
+      ClientWidth = 506
+      TabOrder = 2
+      object Label3: TLabel
+        Left = 0
+        Height = 22
+        Top = 0
+        Width = 54
+        Caption = 'CARS:'
+      end
+    end
+  end
+  object dts_brands: TDataSource
+    DataSet = dtm.qry_brands
+    Left = 320
+    Top = 40
+  end
+  object dts_cars: TDataSource
+    DataSet = dtm.qry_car_names
+    Left = 264
+    Top = 200
+  end
+  object dts_models: TDataSource
+    DataSet = dtm.qry_car_models
+    Left = 368
+    Top = 360
+  end
+end

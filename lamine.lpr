@@ -12,7 +12,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, Controls, umain, ulogin, udtm, unidac10, liteprovider10, myprovider10,
   udtm_main, upermissions, uchange_pass, uusers, utransactions, ustart,
-  utransfer, utreceive
+  utransfer, utreceive, ucars
   { you can add units after this };
 
 {$R *.res}
@@ -32,12 +32,11 @@ begin
   Application.CreateForm(Tfrm_main, frm_main);
   Application.CreateForm(Tfrm_groups, frm_groups);
   Application.CreateForm(Tfrm_change_pass, frm_change_pass);
-  Application.CreateForm(Tfrm_users, frm_users);
-  Application.CreateForm(Tfrm_transactions, frm_transactions);
   Application.CreateForm(Tfrm_receive, frm_receive);
   Application.CreateForm(Tfrm_transfer, frm_transfer);
   Application.CreateForm(Tfrm_start, frm_start);
   Screen.Cursor := crDefault;
+
   Application.Run;
 end.
 

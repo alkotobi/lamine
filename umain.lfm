@@ -32,7 +32,7 @@ object frm_main: Tfrm_main
   end
   object DBEdit1: TDBEdit
     Left = 312
-    Height = 32
+    Height = 27
     Top = 80
     Width = 80
     DataField = 'count_zero_users'
@@ -74,6 +74,10 @@ object frm_main: Tfrm_main
       Caption = 'TRANSACTIONS'
       OnExecute = act_transactionsExecute
       ShortCut = 16468
+    end
+    object act_cars: TAction
+      Caption = 'CARS'
+      OnExecute = act_carsExecute
     end
   end
   object MainMenu1: TMainMenu

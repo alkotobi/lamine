@@ -7,11 +7,10 @@
       <Unit>
         <Filename Value="lamine.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="5"/>
-        <CursorPos Y="19"/>
-        <UsageCount Value="73"/>
+        <TopLine Value="22"/>
+        <CursorPos X="61" Y="34"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -20,9 +19,9 @@
         <ComponentName Value="frm_main"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="48"/>
-        <CursorPos X="26" Y="62"/>
-        <UsageCount Value="73"/>
+        <TopLine Value="58"/>
+        <CursorPos X="66" Y="66"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -35,7 +34,7 @@
         <EditorIndex Value="8"/>
         <TopLine Value="67"/>
         <CursorPos Y="86"/>
-        <UsageCount Value="73"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -47,7 +46,7 @@
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="4"/>
         <CursorPos X="20" Y="3"/>
-        <UsageCount Value="73"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -58,9 +57,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="54"/>
-        <CursorPos X="3" Y="67"/>
-        <UsageCount Value="48"/>
+        <TopLine Value="59"/>
+        <CursorPos X="3" Y="72"/>
+        <UsageCount Value="50"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -70,10 +69,10 @@
         <ComponentName Value="frm_groups"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="11"/>
         <TopLine Value="35"/>
         <CursorPos X="34" Y="54"/>
-        <UsageCount Value="48"/>
+        <UsageCount Value="50"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -83,10 +82,10 @@
         <ComponentName Value="frm_change_pass"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="12"/>
         <TopLine Value="43"/>
         <CursorPos X="10" Y="61"/>
-        <UsageCount Value="47"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -97,7 +96,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="6"/>
-        <UsageCount Value="41"/>
+        <TopLine Value="22"/>
+        <CursorPos X="21" Y="36"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -107,10 +108,11 @@
         <ComponentName Value="frm_transactions"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="64"/>
-        <CursorPos X="6" Y="68"/>
-        <UsageCount Value="40"/>
+        <CursorPos X="30" Y="73"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -123,7 +125,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="70"/>
         <CursorPos X="9" Y="87"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -136,7 +138,7 @@
         <EditorIndex Value="5"/>
         <TopLine Value="70"/>
         <CursorPos X="13" Y="77"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="34"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -149,7 +151,20 @@
         <EditorIndex Value="7"/>
         <TopLine Value="72"/>
         <CursorPos X="15" Y="77"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="34"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucars.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_cars"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="46"/>
+        <CursorPos X="3" Y="63"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -172,122 +187,125 @@
         <UsageCount Value="10"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="28">
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="115" Column="55" TopLine="101"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="113" Column="69" TopLine="101"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="119" Column="3" TopLine="101"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="110" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="111" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="113" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="115" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="118" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="108" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="110" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="111" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="113" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="115" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="118" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="108" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="110" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="111" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="113" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="118" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="108" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="110" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="111" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="113" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="118" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="108" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="116" TopLine="113"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="119" Column="9" TopLine="110"/>
-      </Position>
-      <Position>
-        <Filename Value="utransactions.pas"/>
-        <Caret Line="87" Column="8" TopLine="81"/>
-      </Position>
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="utransactions.pas"/>
         <Caret Line="163" TopLine="147"/>
+      </Position>
+      <Position>
+        <Filename Value="udtm_main.pas"/>
+        <Caret Line="67" Column="3" TopLine="54"/>
+      </Position>
+      <Position>
+        <Filename Value="udtm_main.pas"/>
+        <Caret Line="68" Column="3" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="udtm_main.pas"/>
+        <Caret Line="69" Column="3" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="udtm_main.pas"/>
+        <Caret Line="70" Column="3" TopLine="57"/>
+      </Position>
+      <Position>
+        <Filename Value="udtm_main.pas"/>
+        <Caret Line="71" Column="3" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="umain.pas"/>
+        <Caret Line="62" Column="26" TopLine="48"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="35" Column="22" TopLine="21"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="8" Column="66"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="38" Column="3" TopLine="21"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="39" Column="3" TopLine="22"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="41" Column="3" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="42" Column="3" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="43" Column="3" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="44" Column="3" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="45" Column="3" TopLine="28"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="51" Column="3" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="57" Column="3" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="58" Column="3" TopLine="41"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="57" Column="3" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="58" Column="3" TopLine="41"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="59" Column="3" TopLine="42"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="60" Column="3" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="61" Column="3" TopLine="44"/>
+      </Position>
+      <Position>
+        <Filename Value="ucars.pas"/>
+        <Caret Line="62" Column="3" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="umain.pas"/>
+        <Caret Line="62" Column="5" TopLine="48"/>
+      </Position>
+      <Position>
+        <Filename Value="umain.pas"/>
+        <Caret Line="64" Column="5" TopLine="50"/>
+      </Position>
+      <Position>
+        <Filename Value="uusers.pas"/>
+        <Caret TopLine="12"/>
+      </Position>
+      <Position>
+        <Filename Value="utransactions.pas"/>
+        <Caret Line="68" Column="6" TopLine="64"/>
       </Position>
     </JumpHistory>
     <RunParams>

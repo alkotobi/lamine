@@ -13,6 +13,8 @@ type
 
   Tdtm = class(TDataModule)
     dts_groups: TDataSource;
+    dts_car_name: TDataSource;
+    dts_brand: TDataSource;
     group_name: TWideStringField;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
@@ -41,6 +43,9 @@ type
     qry_usersid_group: TLongintField;
     qry_usersname: TWideStringField;
     qry_userspassword: TWideStringField;
+    qry_brands: TUniQuery;
+    qry_car_names: TUniQuery;
+    qry_car_models: TUniQuery;
     procedure qry_transactionsCalcFields(DataSet: TDataSet);
   private
 

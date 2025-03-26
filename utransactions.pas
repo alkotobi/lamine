@@ -66,10 +66,16 @@ implementation
 
 procedure Tfrm_transactions.FormCreate(Sender: TObject);
 begin
+  with dtm do
+  begin
+    qry_groups.Open;
+    qry_users.Open;
+    qry_permissionns.Open;
+    qry_transactions.open;
+  end;
   pnl_receive.Visible:= dtm_login.qry_permissions.FieldByName(can_confirm_receive).AsBoolean;
   pnl_start.Visible:=dtm_login.qry_permissions.FieldByName(can_confirm_will_send).AsBoolean;
   pnl_send.Visible:=dtm_login.qry_permissions.FieldByName(can_confirm_send).AsBoolean;
-;
 end;
 
 procedure Tfrm_transactions.Button1Click(Sender: TObject);
