@@ -12,12 +12,26 @@ type
   { Tdtm }
 
   Tdtm = class(TDataModule)
+    city_name: TWideStringField;
+    country_name: TWideStringField;
     dts_groups: TDataSource;
     dts_car_name: TDataSource;
     dts_brand: TDataSource;
     group_name: TWideStringField;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
+    qry_citiesid: TLargeintField;
+    qry_citiesname: TWideStringField;
+    qry_citiespostal_code: TWideStringField;
+    qry_clientscedit: TFloatField;
+    qry_clientsdoor_no: TWideStringField;
+    qry_clientsid: TLargeintField;
+    qry_clientsid_city: TLongintField;
+    qry_clientsid_country: TLongintField;
+    qry_clientsname: TWideStringField;
+    qry_clientsneiberhood: TWideStringField;
+    qry_clientspostal_code: TWideStringField;
+    qry_clientsstreet: TWideStringField;
     qry_count_zero: TUniQuery;
     qry_count_zerocount_zero_users: TLargeintField;
     qry_transactionsamount: TFloatField;
@@ -46,6 +60,10 @@ type
     qry_brands: TUniQuery;
     qry_car_names: TUniQuery;
     qry_car_models: TUniQuery;
+    qry_id_pictures: TUniQuery;
+    qry_clients: TUniQuery;
+    qry_cities: TUniQuery;
+    qry_countries: TUniQuery;
     procedure qry_transactionsCalcFields(DataSet: TDataSet);
   private
 

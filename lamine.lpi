@@ -158,6 +158,27 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
+      <Unit>
+        <Filename Value="uclients.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_clients"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucountries.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_countries"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucities.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_cities"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -1,0 +1,60 @@
+object frm_cities: Tfrm_cities
+  Left = 333
+  Height = 228
+  Top = 250
+  Width = 337
+  Caption = 'frm_cities'
+  ClientHeight = 228
+  ClientWidth = 337
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 200
+    Top = 0
+    Width = 337
+    Align = alTop
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        Visible = False
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'name'
+        Width = 200
+        FieldName = 'name'
+      end    
+      item
+        Title.Caption = 'postal_code'
+        FieldName = 'postal_code'
+      end>
+    DataSource = dts_cities
+    TabOrder = 0
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 48
+    Height = 25
+    Top = 200
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dts_cities
+    Options = []
+    TabOrder = 1
+  end
+  object dts_cities: TDataSource
+    DataSet = dtm.qry_cities
+    Left = 88
+    Top = 120
+  end
+end

@@ -313,7 +313,6 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_brands'
     )
-    Active = True
     FilterOptions = []
     Left = 112
     Top = 192
@@ -326,9 +325,8 @@ object dtm: Tdtm
     MasterSource = dts_brand
     MasterFields = 'id'
     DetailFields = 'id_brand'
-    Active = True
     FilterOptions = []
-    Left = 200
+    Left = 176
     Top = 192
     ParamData = <    
       item
@@ -345,10 +343,9 @@ object dtm: Tdtm
     MasterSource = dts_car_name
     MasterFields = 'id'
     DetailFields = 'id_car_name'
-    Active = True
     FilterOptions = []
-    Left = 320
-    Top = 200
+    Left = 248
+    Top = 192
     ParamData = <    
       item
         DataType = ftLargeint
@@ -365,5 +362,183 @@ object dtm: Tdtm
     DataSet = qry_brands
     Left = 112
     Top = 264
+  end
+  object qry_id_pictures: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_ids'
+    )
+    FilterOptions = []
+    Left = 512
+    Top = 152
+  end
+  object qry_clients: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_clients'
+    )
+    FilterOptions = []
+    Left = 504
+    Top = 216
+    object qry_clientsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_clientsname: TWideStringField
+      FieldKind = fkData
+      FieldName = 'name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 255
+    end
+    object qry_clientscedit: TFloatField
+      FieldKind = fkData
+      FieldName = 'cedit'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 10
+    end
+    object qry_clientsdoor_no: TWideStringField
+      FieldKind = fkData
+      FieldName = 'door_no'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 10
+    end
+    object qry_clientsstreet: TWideStringField
+      FieldKind = fkData
+      FieldName = 'street'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 255
+    end
+    object qry_clientsneiberhood: TWideStringField
+      FieldKind = fkData
+      FieldName = 'neiberhood'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object qry_clientsid_city: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_city'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_clientsid_country: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_country'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_clientspostal_code: TWideStringField
+      FieldKind = fkData
+      FieldName = 'postal_code'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 10
+    end
+    object city_name: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'city_name'
+      Index = 9
+      KeyFields = 'id_city'
+      LookupCache = False
+      LookupDataSet = qry_cities
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object country_name: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'country_name'
+      Index = 10
+      KeyFields = 'id_country'
+      LookupCache = False
+      LookupDataSet = qry_countries
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qry_cities: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_cities'
+    )
+    FilterOptions = []
+    Left = 608
+    Top = 208
+    object qry_citiesid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_citiesname: TWideStringField
+      FieldKind = fkData
+      FieldName = 'name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 255
+    end
+    object qry_citiespostal_code: TWideStringField
+      FieldKind = fkData
+      FieldName = 'postal_code'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+  end
+  object qry_countries: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_countries'
+    )
+    FilterOptions = []
+    Left = 608
+    Top = 152
   end
 end

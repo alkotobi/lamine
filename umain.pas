@@ -5,7 +5,7 @@ unit umain;
 interface
 
 uses
-  upermissions, utransactions,ucars, uusers, uchange_pass, udtm, Classes, SysUtils,
+  upermissions,ucountries,ucities,uclients, utransactions,ucars, uusers, uchange_pass, udtm, Classes, SysUtils,
   DB, Forms, Controls, Graphics, Dialogs, ActnList, Menus, ExtCtrls, StdCtrls,
   DBCtrls;
 
@@ -14,6 +14,9 @@ type
   { Tfrm_main }
 
   Tfrm_main = class(TForm)
+    act_cities: TAction;
+    act_clients: TAction;
+    act_countries: TAction;
     act_cars: TAction;
     act_transactions: TAction;
     act_users: TAction;
@@ -21,24 +24,32 @@ type
     act_groups: TAction;
     act: TActionList;
     Button1: TButton;
+    Button2: TButton;
     DataSource1: TDataSource;
     DBEdit1: TDBEdit;
     Label1: TLabel;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
+    MenuItem10: TMenuItem;
+    MenuItem11: TMenuItem;
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
     MenuItem5: TMenuItem;
     MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
     Panel1: TPanel;
     procedure actUpdate(AAction: TBasicAction; var Handled: Boolean);
     procedure act_carsExecute(Sender: TObject);
     procedure act_change_passExecute(Sender: TObject);
+    procedure act_citiesExecute(Sender: TObject);
+    procedure act_clientsExecute(Sender: TObject);
+    procedure act_countriesExecute(Sender: TObject);
     procedure act_groupsExecute(Sender: TObject);
     procedure act_transactionsExecute(Sender: TObject);
     procedure act_usersExecute(Sender: TObject);
-    procedure MenuItem3Click(Sender: TObject);
   private
 
   public
@@ -64,7 +75,7 @@ begin
      if not Assigned(frm_transactions) then
    begin
        Application.CreateForm(Tfrm_transactions, frm_transactions);
-   en
+   end;
     frm_transactions.Show;
 end;
 
@@ -75,11 +86,6 @@ begin
        Application.CreateForm(Tfrm_users, frm_users);
    end;
    frm_users.Show;
-end;
-
-procedure Tfrm_main.MenuItem3Click(Sender: TObject);
-begin
-
 end;
 
 procedure Tfrm_main.actUpdate(AAction: TBasicAction; var Handled: Boolean);
@@ -100,6 +106,33 @@ end;
 procedure Tfrm_main.act_change_passExecute(Sender: TObject);
 begin
   frm_change_pass.ShowModal;
+end;
+
+procedure Tfrm_main.act_citiesExecute(Sender: TObject);
+begin
+    if not Assigned(frm_cities) then
+  begin
+      Application.CreateForm(Tfrm_cities, frm_cities);
+  end;
+  frm_cities.Show;
+end;
+
+procedure Tfrm_main.act_clientsExecute(Sender: TObject);
+begin
+   if not Assigned(frm_clients) then
+  begin
+      Application.CreateForm(Tfrm_clients, frm_clients);
+  end;
+  frm_clients.Show;
+end;
+
+procedure Tfrm_main.act_countriesExecute(Sender: TObject);
+begin
+    if not Assigned(frm_countries) then
+   begin
+       Application.CreateForm(Tfrm_countries, frm_countries);
+   end;
+   frm_countries.Show;
 end;
 
 end.

@@ -29,6 +29,15 @@ object frm_main: Tfrm_main
       Align = alTop
       TabOrder = 0
     end
+    object Button2: TButton
+      Left = 1
+      Height = 25
+      Top = 26
+      Width = 168
+      Action = act_clients
+      Align = alTop
+      TabOrder = 1
+    end
   end
   object DBEdit1: TDBEdit
     Left = 312
@@ -79,10 +88,22 @@ object frm_main: Tfrm_main
       Caption = 'CARS'
       OnExecute = act_carsExecute
     end
+    object act_countries: TAction
+      Caption = 'COUNTRIES'
+      OnExecute = act_countriesExecute
+    end
+    object act_clients: TAction
+      Caption = 'CLIENTS'
+      OnExecute = act_clientsExecute
+    end
+    object act_cities: TAction
+      Caption = 'CITIES'
+      OnExecute = act_citiesExecute
+    end
   end
   object MainMenu1: TMainMenu
-    Left = 36
-    Top = 36
+    Left = 200
+    Top = 152
     object MenuItem5: TMenuItem
       Caption = 'FILE'
       object MenuItem6: TMenuItem
@@ -96,10 +117,24 @@ object frm_main: Tfrm_main
       end
       object MenuItem3: TMenuItem
         Action = act_change_pass
-        OnClick = MenuItem3Click
       end
       object MenuItem4: TMenuItem
         Action = act_users
+      end
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'CARS GESTION'
+      object MenuItem8: TMenuItem
+        Action = act_cars
+      end
+      object MenuItem9: TMenuItem
+        Action = act_countries
+      end
+      object MenuItem10: TMenuItem
+        Action = act_clients
+      end
+      object MenuItem11: TMenuItem
+        Action = act_cities
       end
     end
   end

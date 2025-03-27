@@ -1,0 +1,130 @@
+object frm_clients: Tfrm_clients
+  Left = 333
+  Height = 333
+  Top = 250
+  Width = 1098
+  Caption = 'frm_clients'
+  ClientHeight = 333
+  ClientWidth = 1098
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 295
+    Top = 0
+    Width = 1098
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        Visible = False
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'name'
+        Width = 150
+        FieldName = 'name'
+      end    
+      item
+        ReadOnly = True
+        Title.Caption = 'cedit'
+        FieldName = 'cedit'
+      end    
+      item
+        Title.Caption = 'DOOR NO'
+        Width = 70
+        FieldName = 'door_no'
+      end    
+      item
+        Title.Caption = 'street'
+        Width = 250
+        FieldName = 'street'
+      end    
+      item
+        Title.Caption = 'neiberhood'
+        Width = 200
+        FieldName = 'neiberhood'
+      end    
+      item
+        Title.Caption = 'id_city'
+        Visible = False
+        FieldName = 'id_city'
+      end    
+      item
+        Title.Caption = 'id_country'
+        Visible = False
+        FieldName = 'id_country'
+      end    
+      item
+        Title.Caption = 'CITY'
+        Width = 100
+        FieldName = 'city_name'
+      end    
+      item
+        Title.Caption = 'postal_code'
+        Width = 100
+        FieldName = 'postal_code'
+      end    
+      item
+        Title.Caption = 'COUNTRY'
+        Width = 100
+        FieldName = 'country_name'
+      end>
+    DataSource = dts_clients
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 38
+    Top = 295
+    Width = 1098
+    Align = alBottom
+    AutoSize = True
+    ClientHeight = 38
+    ClientWidth = 1098
+    TabOrder = 1
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Height = 25
+      Top = 1
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = dts_clients
+      Options = []
+      TabOrder = 0
+    end
+    object BitBtn1: TBitBtn
+      Left = 918
+      Height = 30
+      Top = 7
+      Width = 123
+      Action = frm_main.act_cities
+      TabOrder = 1
+    end
+    object BitBtn2: TBitBtn
+      Left = 792
+      Height = 30
+      Top = 7
+      Width = 123
+      Action = frm_main.act_countries
+      TabOrder = 2
+    end
+  end
+  object dts_clients: TDataSource
+    DataSet = dtm.qry_clients
+    Left = 328
+    Top = 96
+  end
+end
