@@ -313,6 +313,7 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_brands'
     )
+    Active = True
     FilterOptions = []
     Left = 112
     Top = 192
@@ -325,15 +326,68 @@ object dtm: Tdtm
     MasterSource = dts_brand
     MasterFields = 'id'
     DetailFields = 'id_brand'
+    Active = True
     FilterOptions = []
+    OnCalcFields = qry_car_namesCalcFields
     Left = 176
-    Top = 192
+    Top = 176
     ParamData = <    
       item
         DataType = ftLargeint
         Name = 'id'
         ParamType = ptInput
       end>
+    object qry_car_namesid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_car_namesname: TWideStringField
+      FieldKind = fkData
+      FieldName = 'name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 250
+    end
+    object qry_car_namesid_brand: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_brand'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object car_brand: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'brand'
+      Index = 3
+      KeyFields = 'id_brand'
+      LookupCache = False
+      LookupDataSet = qry_brands
+      LookupKeyFields = 'id'
+      LookupResultField = 'brand'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_car_namesbrand_name: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'brand_name'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
   end
   object qry_car_models: TUniQuery
     Connection = dtm_login.conn
@@ -343,6 +397,7 @@ object dtm: Tdtm
     MasterSource = dts_car_name
     MasterFields = 'id'
     DetailFields = 'id_car_name'
+    Active = True
     FilterOptions = []
     Left = 248
     Top = 192
@@ -352,6 +407,57 @@ object dtm: Tdtm
         Name = 'id'
         ParamType = ptInput
       end>
+    object qry_car_modelsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_car_modelsmodel: TWideStringField
+      FieldKind = fkData
+      FieldName = 'model'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 250
+    end
+    object qry_car_modelsid_car_name: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_car_name'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_car_modelsnotes: TWideMemoField
+      FieldKind = fkData
+      FieldName = 'notes'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftWideMemo
+    end
+    object car_name: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'car_name'
+      Index = 4
+      KeyFields = 'id_car_name'
+      LookupCache = False
+      LookupDataSet = qry_car_names
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
   end
   object dts_car_name: TDataSource
     DataSet = qry_car_names
@@ -377,6 +483,7 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_clients'
     )
+    Active = True
     FilterOptions = []
     Left = 504
     Top = 216
@@ -499,6 +606,7 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_cities'
     )
+    Active = True
     FilterOptions = []
     Left = 608
     Top = 208
@@ -537,8 +645,266 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_countries'
     )
+    Active = True
     FilterOptions = []
     Left = 608
+    Top = 152
+  end
+  object qry_order: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_orders'
+    )
+    FilterOptions = []
+    Left = 392
+    Top = 152
+    object qry_orderid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_orderdate: TDateField
+      FieldKind = fkData
+      FieldName = 'date'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_orderref: TWideStringField
+      FieldKind = fkData
+      FieldName = 'ref'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_ordervirsement: TFloatField
+      FieldKind = fkData
+      FieldName = 'virsement'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 10
+    end
+    object qry_orderid_client: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_client'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object client_name: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'client_name'
+      Index = 5
+      KeyFields = 'id_client'
+      LookupCache = False
+      LookupDataSet = qry_clients
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qry_order_details: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_order_details'
+    )
+    MasterSource = dts_order
+    MasterFields = 'id'
+    DetailFields = 'id_order'
+    Active = True
+    FilterOptions = []
+    Left = 400
+    Top = 216
+    ParamData = <    
+      item
+        DataType = ftLargeint
+        Name = 'id'
+        ParamType = ptInput
+      end>
+    object qry_order_detailsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_order_detailsid_order: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_order'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_order_detailsid_client: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_client'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object order_details_client_name: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'client_name'
+      Index = 3
+      KeyFields = 'id_client'
+      LookupCache = False
+      LookupDataSet = qry_clients
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_order_detailsid_car_model: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_car_model'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_order_detailscolor: TLongintField
+      FieldKind = fkData
+      FieldName = 'color'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_order_detailsvin: TWideStringField
+      FieldKind = fkData
+      FieldName = 'vin'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
+    object qry_order_detailsdate_of_production: TDateField
+      FieldKind = fkData
+      FieldName = 'date_of_production'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_order_detailskm: TLongintField
+      FieldKind = fkData
+      FieldName = 'km'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_order_detailsdate_of_delivery: TDateField
+      FieldKind = fkData
+      FieldName = 'date_of_delivery'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_order_detailsdate_ordered: TDateField
+      FieldKind = fkData
+      FieldName = 'date_ordered'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_order_detailsship_to_id_city: TLongintField
+      FieldKind = fkData
+      FieldName = 'ship_to_id_city'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_order_detailsship_from_id_city: TLongintField
+      FieldKind = fkData
+      FieldName = 'ship_from_id_city'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_order_detailsprice_usd: TFloatField
+      FieldKind = fkData
+      FieldName = 'price_usd'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 10
+    end
+    object qry_order_detailsfrieght_usd: TFloatField
+      FieldKind = fkData
+      FieldName = 'frieght_usd'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 10
+    end
+    object qry_order_detailsrate: TFloatField
+      FieldKind = fkData
+      FieldName = 'rate'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 10
+    end
+    object TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'model'
+      Index = 16
+      KeyFields = 'id_car_model'
+      LookupCache = False
+      LookupDataSet = qry_car_models
+      LookupKeyFields = 'id'
+      LookupResultField = 'model'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dts_order: TDataSource
+    DataSet = qry_order
+    Left = 320
     Top = 152
   end
 end
