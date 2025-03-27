@@ -51,6 +51,12 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="DateTimeCtrlsDsgn"/>
+      </Item>
+      <Item>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item>
+      <Item>
         <PackageName Value="FCL"/>
       </Item>
       <Item>
@@ -176,6 +182,19 @@
         <Filename Value="ucities.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frm_cities"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uorders_edit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_edit_orders"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uorders.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_orders"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>

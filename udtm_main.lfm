@@ -12,6 +12,7 @@ object dtm: Tdtm
     MasterSource = dts_groups
     MasterFields = 'id'
     DetailFields = 'id_group'
+    Active = True
     FilterOptions = []
     Left = 136
     Top = 24
@@ -27,6 +28,7 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from `tbl_groups`'
     )
+    Active = True
     FilterOptions = []
     Left = 216
     Top = 24
@@ -41,6 +43,7 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from `tbl_users`'
     )
+    Active = True
     FilterOptions = []
     Left = 288
     Top = 24
@@ -111,6 +114,7 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_transactions'
     )
+    Active = True
     FilterOptions = []
     OnCalcFields = qry_transactionsCalcFields
     Left = 352
@@ -295,6 +299,7 @@ object dtm: Tdtm
       'FROM tbl_transactions'
       'WHERE id_user_send = 0 AND id_user_receive = 0;'
     )
+    Active = True
     FilterOptions = []
     Left = 440
     Top = 32
@@ -313,9 +318,8 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_brands'
     )
-    Active = True
     FilterOptions = []
-    Left = 112
+    Left = 96
     Top = 192
   end
   object qry_car_names: TUniQuery
@@ -326,11 +330,10 @@ object dtm: Tdtm
     MasterSource = dts_brand
     MasterFields = 'id'
     DetailFields = 'id_brand'
-    Active = True
     FilterOptions = []
     OnCalcFields = qry_car_namesCalcFields
-    Left = 176
-    Top = 176
+    Left = 168
+    Top = 192
     ParamData = <    
       item
         DataType = ftLargeint
@@ -397,9 +400,8 @@ object dtm: Tdtm
     MasterSource = dts_car_name
     MasterFields = 'id'
     DetailFields = 'id_car_name'
-    Active = True
     FilterOptions = []
-    Left = 248
+    Left = 256
     Top = 192
     ParamData = <    
       item
@@ -453,7 +455,7 @@ object dtm: Tdtm
       LookupCache = False
       LookupDataSet = qry_car_names
       LookupKeyFields = 'id'
-      LookupResultField = 'name'
+      LookupResultField = 'brand_name'
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
@@ -483,7 +485,6 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_clients'
     )
-    Active = True
     FilterOptions = []
     Left = 504
     Top = 216
@@ -606,7 +607,6 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_cities'
     )
-    Active = True
     FilterOptions = []
     Left = 608
     Top = 208
@@ -645,10 +645,28 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_countries'
     )
-    Active = True
     FilterOptions = []
     Left = 608
     Top = 152
+    object qry_countriesid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_countriesname: TWideStringField
+      FieldKind = fkData
+      FieldName = 'name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 255
+    end
   end
   object qry_order: TUniQuery
     Connection = dtm_login.conn
@@ -726,7 +744,6 @@ object dtm: Tdtm
     MasterSource = dts_order
     MasterFields = 'id'
     DetailFields = 'id_order'
-    Active = True
     FilterOptions = []
     Left = 400
     Top = 216

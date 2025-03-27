@@ -5,7 +5,7 @@ unit umain;
 interface
 
 uses
-  upermissions,ucountries,ucities,uclients, utransactions,ucars, uusers, uchange_pass, udtm, Classes, SysUtils,
+  upermissions,uorders, ucountries,ucities,uclients, utransactions,ucars, uusers, uchange_pass, udtm, Classes, SysUtils,
   DB, Forms, Controls, Graphics, Dialogs, ActnList, Menus, ExtCtrls, StdCtrls,
   DBCtrls;
 
@@ -14,6 +14,7 @@ type
   { Tfrm_main }
 
   Tfrm_main = class(TForm)
+    act_orderes: TAction;
     act_cities: TAction;
     act_clients: TAction;
     act_countries: TAction;
@@ -32,6 +33,7 @@ type
     MenuItem1: TMenuItem;
     MenuItem10: TMenuItem;
     MenuItem11: TMenuItem;
+    MenuItem12: TMenuItem;
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
@@ -48,6 +50,7 @@ type
     procedure act_clientsExecute(Sender: TObject);
     procedure act_countriesExecute(Sender: TObject);
     procedure act_groupsExecute(Sender: TObject);
+    procedure act_orderesExecute(Sender: TObject);
     procedure act_transactionsExecute(Sender: TObject);
     procedure act_usersExecute(Sender: TObject);
   private
@@ -68,6 +71,15 @@ implementation
 procedure Tfrm_main.act_groupsExecute(Sender: TObject);
 begin
   frm_groups.show;
+end;
+
+procedure Tfrm_main.act_orderesExecute(Sender: TObject);
+begin
+       if not Assigned(frm_orders) then
+   begin
+       Application.CreateForm(Tfrm_orders, frm_orders);
+   end;
+    frm_orders.Show;
 end;
 
 procedure Tfrm_main.act_transactionsExecute(Sender: TObject);

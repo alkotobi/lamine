@@ -14,12 +14,12 @@ object dtm_login: Tdtm_login
     Options.DisconnectedMode = True
     Options.LocalFailover = True
     Pooling = True
-    Username = 'merhab_root'
-    Server = '216.219.81.100'
+    Username = 'root'
+    Server = 'localhost'
     OnConnectionLost = connConnectionLost
     Left = 88
     Top = 16
-    EncryptedPassword = 'B1FFB0FFAAFFADFFBAFFBBFF9BFF96FF91FF9AFFC7FFC9FFC7FFD4FF'
+    EncryptedPassword = '91FF90FF90FF90FF'
   end
   object qry_groups: TUniQuery
     Connection = conn

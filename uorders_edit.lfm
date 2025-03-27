@@ -1,0 +1,84 @@
+object frm_edit_orders: Tfrm_edit_orders
+  Left = 293
+  Height = 321
+  Top = 250
+  Width = 548
+  Caption = 'frm_edit_orders'
+  ClientHeight = 321
+  ClientWidth = 548
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 88
+    Height = 20
+    Top = 32
+    Width = 208
+    AutoComplete = True
+    DataField = 'id_client'
+    KeyField = 'id'
+    ListField = 'name'
+    ListFieldIndex = 0
+    ListSource = dts_clients
+    LookupCache = True
+    TabOrder = 0
+  end
+  object DBDateTimePicker1: TDBDateTimePicker
+    Left = 384
+    Height = 28
+    Top = 32
+    Width = 129
+    DataField = 'date'
+    ReadOnly = False
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 1
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 22
+    Top = 32
+    Width = 64
+    Caption = 'CLIENT'
+  end
+  object Label2: TLabel
+    Left = 320
+    Height = 22
+    Top = 32
+    Width = 46
+    Caption = 'DATE'
+  end
+  object dbedt_ref: TDBEdit
+    Left = 88
+    Height = 32
+    Top = 80
+    Width = 208
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 22
+    Top = 88
+    Width = 33
+    Caption = 'REF'
+  end
+  object dts_clients: TDataSource
+    DataSet = dtm.qry_clients
+    Left = 496
+    Top = 96
+  end
+end

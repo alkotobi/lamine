@@ -9,6 +9,7 @@ object frm_login: Tfrm_login
   Font.CharSet = ANSI_CHARSET
   Font.Height = -21
   Font.Name = '.SF NS'
+  OnCreate = FormCreate
   Position = poDesktopCenter
   object Label1: TLabel
     Left = 16

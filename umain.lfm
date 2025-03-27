@@ -41,7 +41,7 @@ object frm_main: Tfrm_main
   end
   object DBEdit1: TDBEdit
     Left = 312
-    Height = 27
+    Height = 32
     Top = 80
     Width = 80
     DataField = 'count_zero_users'
@@ -100,6 +100,10 @@ object frm_main: Tfrm_main
       Caption = 'CITIES'
       OnExecute = act_citiesExecute
     end
+    object act_orderes: TAction
+      Caption = 'ORDERS'
+      OnExecute = act_orderesExecute
+    end
   end
   object MainMenu1: TMainMenu
     Left = 200
@@ -135,6 +139,9 @@ object frm_main: Tfrm_main
       end
       object MenuItem11: TMenuItem
         Action = act_cities
+      end
+      object MenuItem12: TMenuItem
+        Action = act_orderes
       end
     end
   end

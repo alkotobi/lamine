@@ -22,6 +22,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure btn_loginClick(Sender: TObject);
     procedure edt_passKeyPress(Sender: TObject; var Key: char);
+    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -84,6 +85,17 @@ begin
   begin
     btn_login.Click
 
+  end;
+end;
+
+procedure Tfrm_login.FormCreate(Sender: TObject);
+begin
+  with dtm_login do
+  begin
+    conn.Open;
+    //qry_groups.Open;
+    //qry_permissions.Open;
+    //qry_users.open;
   end;
 end;
 

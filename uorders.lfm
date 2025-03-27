@@ -1,0 +1,127 @@
+object frm_orders: Tfrm_orders
+  Left = 293
+  Height = 510
+  Top = 250
+  Width = 831
+  Caption = 'frm_orders'
+  ClientHeight = 510
+  ClientWidth = 831
+  OnCreate = FormCreate
+  object Panel1: TPanel
+    Left = 0
+    Height = 290
+    Top = 0
+    Width = 831
+    Align = alTop
+    ClientHeight = 290
+    ClientWidth = 831
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 1
+      Height = 50
+      Top = 1
+      Width = 829
+      Align = alTop
+      TabOrder = 0
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 50
+      Top = 239
+      Width = 829
+      Align = alBottom
+      ClientHeight = 50
+      ClientWidth = 829
+      TabOrder = 1
+      object btn_client: TBitBtn
+        Left = 728
+        Height = 30
+        Top = 11
+        Width = 96
+        Action = frm_main.act_clients
+        TabOrder = 0
+      end
+      object DBNavigator1: TDBNavigator
+        Left = 8
+        Height = 25
+        Top = 11
+        Width = 241
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 241
+        DataSource = dts_ordders
+        Options = []
+        TabOrder = 1
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbPost, nbCancel, nbRefresh]
+      end
+      object btn_new_order: TBitBtn
+        Left = 584
+        Height = 30
+        Top = 11
+        Width = 139
+        Caption = 'NEW ORDER'
+        OnClick = btn_new_orderClick
+        TabOrder = 2
+      end
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 188
+      Top = 51
+      Width = 829
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'id'
+          Visible = False
+          FieldName = 'id'
+        end      
+        item
+          PickList.Strings = (
+            'merhab noureddine'
+            'sofia'
+          )
+          Title.Caption = 'CLIENT'
+          FieldName = 'client_name'
+        end      
+        item
+          Title.Caption = 'date'
+          FieldName = 'date'
+        end      
+        item
+          Title.Caption = 'ref'
+          Width = 100
+          FieldName = 'ref'
+        end      
+        item
+          Title.Caption = 'virsement'
+          FieldName = 'virsement'
+        end      
+        item
+          Title.Caption = 'id_client'
+          Visible = False
+          FieldName = 'id_client'
+        end>
+      DataSource = dts_ordders
+      TabOrder = 2
+    end
+  end
+  object dts_ordders: TDataSource
+    DataSet = dtm.qry_order
+    Left = 268
+    Top = 180
+  end
+  object ActionList1: TActionList
+    Top = 65488
+    object act_new_order: TAction
+      Caption = 'act_new_order'
+    end
+  end
+end

@@ -12,6 +12,7 @@ type
   { Tdtm }
 
   Tdtm = class(TDataModule)
+    car_brand: TWideStringField;
     car_name: TWideStringField;
     city_name: TWideStringField;
     client_name: TWideStringField;
@@ -44,6 +45,8 @@ type
     qry_clientsneiberhood: TWideStringField;
     qry_clientspostal_code: TWideStringField;
     qry_clientsstreet: TWideStringField;
+    qry_countriesid: TLargeintField;
+    qry_countriesname: TWideStringField;
     qry_count_zero: TUniQuery;
     qry_count_zerocount_zero_users: TLargeintField;
     qry_orderdate: TDateField;

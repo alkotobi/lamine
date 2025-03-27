@@ -10,10 +10,10 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Controls, umain, ulogin, udtm, unidac10, liteprovider10, myprovider10,
-  udtm_main, upermissions, uchange_pass, uusers, utransactions, ustart,
-  utransfer, utreceive, ucars, uclients, ucountries, ucities
-  { you can add units after this };
+  Forms, Controls, datetimectrls, umain, ulogin, udtm, unidac10, liteprovider10,
+  myprovider10, udtm_main, upermissions, uchange_pass, uusers, utransactions,
+  ustart, utransfer, utreceive, ucars, uclients, ucountries, ucities,
+  uorders_edit, uorders;
 
 {$R *.res}
 
