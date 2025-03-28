@@ -1,0 +1,345 @@
+object frm_order_detail_edit: Tfrm_order_detail_edit
+  Left = 333
+  Height = 323
+  Top = 250
+  Width = 821
+  Caption = 'frm_order_detail_edit'
+  ClientHeight = 323
+  ClientWidth = 821
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  OnClose = FormClose
+  Position = poDesktopCenter
+  object Panel1: TPanel
+    Left = 0
+    Height = 256
+    Top = 0
+    Width = 821
+    Align = alTop
+    ClientHeight = 256
+    ClientWidth = 821
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 18
+      Height = 22
+      Top = 23
+      Width = 64
+      Caption = 'CLIENT'
+    end
+    object dbcmb_client: TDBLookupComboBox
+      Left = 193
+      Height = 20
+      Top = 19
+      Width = 231
+      AutoComplete = True
+      CharCase = ecUppercase
+      DataField = 'id_client'
+      DataSource = frm_orders.dts_orders_det
+      KeyField = 'id'
+      ListField = 'name'
+      ListFieldIndex = 0
+      ListSource = dts_clients
+      LookupCache = False
+      TabOrder = 0
+    end
+    object dbcmb_car: TDBLookupComboBox
+      Left = 192
+      Height = 20
+      Top = 47
+      Width = 231
+      AutoComplete = True
+      CharCase = ecUppercase
+      DataField = 'id_car_model'
+      DataSource = frm_orders.dts_orders_det
+      KeyField = 'model_id'
+      ListField = 'car_info'
+      ListFieldIndex = 0
+      ListSource = dts_car_info
+      LookupCache = False
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 22
+      Top = 51
+      Width = 37
+      Caption = 'CAR'
+    end
+    object edt_vin: TDBEdit
+      Left = 193
+      Height = 27
+      Top = 75
+      Width = 230
+      DataField = 'vin'
+      DataSource = frm_orders.dts_orders_det
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object Label3: TLabel
+      Left = 18
+      Height = 22
+      Top = 79
+      Width = 30
+      Caption = 'VIN'
+    end
+    object Label4: TLabel
+      Left = 496
+      Height = 22
+      Top = 24
+      Width = 63
+      Caption = 'COLOR'
+    end
+    object DBDateEdit1: TDBDateEdit
+      Left = 194
+      Height = 27
+      Top = 108
+      Width = 230
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DefaultToday = True
+      DateOrder = doDMY
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 10
+      TabOrder = 3
+      Text = '  /  /    '
+      DataField = 'date_ordered'
+      DataSource = frm_orders.dts_orders_det
+    end
+    object Label5: TLabel
+      Left = 18
+      Height = 22
+      Top = 113
+      Width = 136
+      Caption = 'DATE ORDERED'
+    end
+    object Label6: TLabel
+      Left = 18
+      Height = 22
+      Top = 141
+      Width = 168
+      Caption = 'DATE FABRICATION'
+    end
+    object DBDateEdit2: TDBDateEdit
+      Left = 194
+      Height = 27
+      Top = 136
+      Width = 230
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doDMY
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 10
+      TabOrder = 4
+      Text = '  /  /    '
+      DataField = 'date_of_production'
+      DataSource = frm_orders.dts_orders_det
+    end
+    object Label7: TLabel
+      Left = 16
+      Height = 22
+      Top = 173
+      Width = 136
+      Caption = 'DATE DELIVERY'
+    end
+    object DBDateEdit3: TDBDateEdit
+      Left = 192
+      Height = 27
+      Top = 168
+      Width = 230
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doDMY
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 10
+      TabOrder = 5
+      Text = '  /  /    '
+      DataField = 'date_of_delivery'
+      DataSource = frm_orders.dts_orders_det
+    end
+    object Label8: TLabel
+      Left = 499
+      Height = 22
+      Top = 57
+      Width = 28
+      Caption = 'KM'
+    end
+    object DBEdit2: TDBEdit
+      Left = 600
+      Height = 27
+      Top = 56
+      Width = 176
+      DataField = 'km'
+      DataSource = frm_orders.dts_orders_det
+      MaxLength = 0
+      TabOrder = 6
+    end
+    object Label9: TLabel
+      Left = 496
+      Height = 22
+      Top = 96
+      Width = 98
+      Caption = 'SHIP FROM'
+    end
+    object dbcmb_car1: TDBLookupComboBox
+      Left = 600
+      Height = 20
+      Top = 96
+      Width = 175
+      AutoComplete = True
+      CharCase = ecUppercase
+      DataField = 'ship_from_id_city'
+      DataSource = frm_orders.dts_orders_det
+      KeyField = 'id'
+      ListField = 'name'
+      ListFieldIndex = 0
+      ListSource = dts_cities
+      LookupCache = False
+      TabOrder = 7
+    end
+    object dbcmb_car2: TDBLookupComboBox
+      Left = 601
+      Height = 20
+      Top = 124
+      Width = 175
+      AutoComplete = True
+      CharCase = ecUppercase
+      DataField = 'ship_to_id_city'
+      DataSource = frm_orders.dts_orders_det
+      KeyField = 'id'
+      ListField = 'name'
+      ListFieldIndex = 0
+      ListSource = dts_cities
+      LookupCache = False
+      TabOrder = 8
+    end
+    object Label10: TLabel
+      Left = 496
+      Height = 22
+      Top = 124
+      Width = 71
+      Caption = 'SHIP TO'
+    end
+    object DBEdit3: TDBEdit
+      Left = 600
+      Height = 27
+      Top = 152
+      Width = 176
+      DataField = 'price_usd'
+      DataSource = frm_orders.dts_orders_det
+      MaxLength = 0
+      TabOrder = 9
+    end
+    object Label11: TLabel
+      Left = 496
+      Height = 22
+      Top = 153
+      Width = 52
+      Caption = 'PRICE'
+    end
+    object Label12: TLabel
+      Left = 495
+      Height = 22
+      Top = 185
+      Width = 45
+      Caption = 'RATE'
+    end
+    object DBEdit4: TDBEdit
+      Left = 599
+      Height = 27
+      Top = 184
+      Width = 176
+      DataField = 'rate'
+      DataSource = frm_orders.dts_orders_det
+      MaxLength = 0
+      TabOrder = 10
+    end
+    object Label13: TLabel
+      Left = 496
+      Height = 22
+      Top = 217
+      Width = 76
+      Caption = 'FREIGHT'
+    end
+    object DBEdit5: TDBEdit
+      Left = 600
+      Height = 27
+      Top = 216
+      Width = 176
+      DataField = 'frieght_usd'
+      DataSource = frm_orders.dts_orders_det
+      MaxLength = 0
+      TabOrder = 11
+    end
+  end
+  object BitBtn1: TBitBtn
+    Left = 680
+    Height = 30
+    Top = 267
+    Width = 96
+    Caption = 'SAVE'
+    OnClick = BitBtn1Click
+    TabOrder = 1
+  end
+  object BitBtn2: TBitBtn
+    Left = 576
+    Height = 30
+    Top = 267
+    Width = 97
+    Caption = 'CANCEL'
+    OnClick = BitBtn2Click
+    TabOrder = 2
+  end
+  object dbcmb_client1: TDBLookupComboBox
+    Left = 600
+    Height = 20
+    Top = 24
+    Width = 176
+    AutoComplete = True
+    CharCase = ecUppercase
+    DataField = 'id_color'
+    DataSource = frm_orders.dts_orders_det
+    KeyField = 'id'
+    ListField = 'color'
+    ListFieldIndex = 0
+    ListSource = dts_colors
+    LookupCache = False
+    TabOrder = 3
+  end
+  object BitBtn3: TBitBtn
+    Left = 16
+    Height = 30
+    Top = 267
+    Width = 104
+    Action = frm_main.act_colors
+    TabOrder = 4
+  end
+  object BitBtn4: TBitBtn
+    Left = 120
+    Height = 30
+    Top = 267
+    Width = 104
+    Action = frm_main.act_cities
+    TabOrder = 5
+  end
+  object dts_clients: TDataSource
+    DataSet = dtm.qry_clients
+    Left = 104
+    Top = 48
+  end
+  object dts_car_info: TDataSource
+    DataSet = dtm.qry_car_info
+    Left = 112
+    Top = 32
+  end
+  object dts_cities: TDataSource
+    DataSet = dtm.qry_cities
+    Left = 144
+    Top = 24
+  end
+  object dts_colors: TDataSource
+    DataSet = dtm.qry_colors
+    Left = 172
+    Top = 52
+  end
+end

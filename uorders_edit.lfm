@@ -1,84 +1,137 @@
 object frm_edit_orders: Tfrm_edit_orders
   Left = 293
-  Height = 321
+  Height = 149
   Top = 250
-  Width = 548
+  Width = 510
   Caption = 'frm_edit_orders'
-  ClientHeight = 321
-  ClientWidth = 548
+  ClientHeight = 149
+  ClientWidth = 510
   Font.CharSet = ANSI_CHARSET
   Font.Height = -19
   Font.Name = '.SF NS'
+  OnClose = FormClose
   OnCreate = FormCreate
   Position = poDesktopCenter
-  object DBLookupComboBox1: TDBLookupComboBox
-    Left = 88
-    Height = 20
-    Top = 32
-    Width = 208
-    AutoComplete = True
-    DataField = 'id_client'
-    KeyField = 'id'
-    ListField = 'name'
-    ListFieldIndex = 0
-    ListSource = dts_clients
-    LookupCache = True
+  object BitBtn1: TBitBtn
+    Left = 280
+    Height = 30
+    Top = 104
+    Width = 107
+    Caption = 'CANCEL'
+    OnClick = BitBtn1Click
     TabOrder = 0
   end
-  object DBDateTimePicker1: TDBDateTimePicker
-    Left = 384
-    Height = 28
-    Top = 32
-    Width = 129
-    DataField = 'date'
-    ReadOnly = False
-    CenturyFrom = 1941
-    MaxDate = 2958465
-    MinDate = -53780
+  object BitBtn2: TBitBtn
+    Left = 393
+    Height = 30
+    Top = 104
+    Width = 107
+    Caption = 'SAVE'
+    OnClick = BitBtn2Click
     TabOrder = 1
-    TrailingSeparator = False
-    TextForNullDate = 'NULL'
-    LeadingZeros = True
-    Kind = dtkDate
-    TimeFormat = tf24
-    TimeDisplay = tdHMS
-    DateMode = dmComboBox
-    UseDefaultSeparators = True
-    HideDateTimeParts = []
-    MonthNames = 'Long'
   end
-  object Label1: TLabel
-    Left = 16
-    Height = 22
-    Top = 32
-    Width = 64
-    Caption = 'CLIENT'
-  end
-  object Label2: TLabel
-    Left = 320
-    Height = 22
-    Top = 32
-    Width = 46
-    Caption = 'DATE'
-  end
-  object dbedt_ref: TDBEdit
-    Left = 88
-    Height = 32
-    Top = 80
-    Width = 208
-    MaxLength = 0
+  object Panel1: TPanel
+    Left = 0
+    Height = 96
+    Top = 0
+    Width = 510
+    Align = alTop
+    ClientHeight = 96
+    ClientWidth = 510
     TabOrder = 2
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 72
+      Height = 20
+      Top = 8
+      Width = 208
+      AutoComplete = True
+      CharCase = ecUppercase
+      DataField = 'id_broker'
+      DataSource = frm_orders.dts_ordders
+      KeyField = 'id'
+      ListField = 'broker'
+      ListFieldIndex = 0
+      ListSource = dts_broker
+      LookupCache = True
+      TabOrder = 0
+    end
+    object DBDateTimePicker1: TDBDateTimePicker
+      Left = 368
+      Height = 28
+      Top = 8
+      Width = 129
+      DataField = 'date'
+      DataSource = frm_orders.dts_ordders
+      ReadOnly = False
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 1
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object Label1: TLabel
+      Left = 0
+      Height = 22
+      Top = 8
+      Width = 73
+      Caption = 'BROKER'
+    end
+    object Label2: TLabel
+      Left = 304
+      Height = 22
+      Top = 8
+      Width = 46
+      Caption = 'DATE'
+    end
+    object dbedt_ref: TDBEdit
+      Left = 72
+      Height = 27
+      Top = 56
+      Width = 208
+      DataField = 'ref'
+      DataSource = frm_orders.dts_ordders
+      CharCase = ecUppercase
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object Label3: TLabel
+      Left = 0
+      Height = 22
+      Top = 61
+      Width = 33
+      Caption = 'REF'
+    end
+    object DBEdit1: TDBEdit
+      Left = 372
+      Height = 27
+      Top = 52
+      Width = 125
+      DataField = 'virsement'
+      DataSource = frm_orders.dts_ordders
+      Alignment = taRightJustify
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object Label4: TLabel
+      Left = 304
+      Height = 22
+      Top = 57
+      Width = 47
+      Caption = 'VERS'
+    end
   end
-  object Label3: TLabel
-    Left = 16
-    Height = 22
-    Top = 88
-    Width = 33
-    Caption = 'REF'
-  end
-  object dts_clients: TDataSource
-    DataSet = dtm.qry_clients
-    Left = 496
-    Top = 96
+  object dts_broker: TDataSource
+    DataSet = dtm.qry_broker
+    Left = 80
+    Top = 152
   end
 end

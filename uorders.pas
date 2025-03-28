@@ -6,24 +6,46 @@ interface
 
 uses
   Classes, udtm_main, SysUtils, DB, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, ActnList, Buttons, DBGrids, DBCtrls,uorders_edit,DateUtils;
+  ExtCtrls, ActnList, Buttons, DBGrids, DBCtrls, StdCtrls, DBDateTimePicker,
+  uorders_edit, DateUtils,uorder_det_edit,ucars;
 
 type
 
   { Tfrm_orders }
 
   Tfrm_orders = class(TForm)
-    ActionList1: TActionList;
+    act_new_car: TAction;
+    act_change_car: TAction;
+    act_edit_order: TAction;
+    act_orders: TActionList;
     act_new_order: TAction;
-    btn_client: TBitBtn;
+    btn_client1: TBitBtn;
+    btn_client2: TBitBtn;
+    btn_edit_order: TBitBtn;
+    btn_edit_order1: TBitBtn;
     btn_new_order: TBitBtn;
+    btn_new_order1: TBitBtn;
+    DBEdit1: TDBEdit;
+    DBGrid2: TDBGrid;
+    dts_car_models: TDataSource;
+    dts_orders_det: TDataSource;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
+    DBNavigator2: TDBNavigator;
     dts_ordders: TDataSource;
+    Label1: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
-    procedure btn_new_orderClick(Sender: TObject);
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    procedure act_change_carExecute(Sender: TObject);
+    procedure act_clientsExecute(Sender: TObject);
+    procedure act_edit_orderExecute(Sender: TObject);
+    procedure act_new_carExecute(Sender: TObject);
+    procedure act_new_orderExecute(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
   private
 
@@ -46,31 +68,76 @@ begin
   begin
     qry_clients.Open;
     qry_order.Open;
+    qry_order_details.Open;
+    qry_brands.open;
+    qry_car_names.Open;
+    qry_car_models.Open;
+    qry_cities.Open;
+    qry_colors.Open;
+    qry_car_info.Open;
   end;
 end;
 
-procedure Tfrm_orders.btn_new_orderClick(Sender: TObject);
-var ref,name:string;
-  id:integer;
-  bk:TBookMark;
+procedure Tfrm_orders.act_edit_orderExecute(Sender: TObject);
+begin
+    if not Assigned(frm_edit_orders) then
+  begin
+    Application.CreateForm(Tfrm_edit_orders, frm_edit_orders);
+  end;
+  dtm.qry_order.edit;
+  frm_edit_orders.ShowModal;
+end;
+
+procedure Tfrm_orders.act_new_carExecute(Sender: TObject);
+begin
+      if not Assigned(frm_order_detail_edit) then
+  begin
+    Application.CreateForm(Tfrm_order_detail_edit, frm_order_detail_edit);
+  end;
+    dtm.qry_order_details.Append;
+    dtm.qry_order_details.FieldByName('date_ordered').AsDateTime:=date;
+    frm_order_detail_edit.ShowModal;
+end;
+
+procedure Tfrm_orders.act_change_carExecute(Sender: TObject);
+begin
+    if not Assigned(frm_order_detail_edit) then
+  begin
+    Application.CreateForm(Tfrm_order_detail_edit, frm_order_detail_edit);
+  end;
+    dtm.qry_order_details.edit;
+    frm_order_detail_edit.ShowModal;
+end;
+
+procedure Tfrm_orders.act_clientsExecute(Sender: TObject);
+begin
+      if not Assigned(frm_cars) then
+  begin
+    Application.CreateForm(Tfrm_cars, frm_cars);
+  end;
+      frm_cars.showModal;
+end;
+
+procedure Tfrm_orders.act_new_orderExecute(Sender: TObject);
 begin
   if not Assigned(frm_edit_orders) then
   begin
     Application.CreateForm(Tfrm_edit_orders, frm_edit_orders);
   end;
-  bk := dtm.qry_order.GetBookmark;
-  dtm.qry_order.Last;
-  if dtm.qry_order.IsEmpty then id:=0
-  else
-  id := dtm.qry_order.FieldByName('id').AsInteger;
-  dtm.qry_order.GotoBookmark(bk);
   dtm.qry_order.Append;
-  dtm.qry_clients.FindKey([dtm.qry_order.FieldByName('id').AsInteger]);
-  name :=dtm.qry_clients.FieldByName('name').AsString;
-  ref := name[0]+name[1]+name[2];
-
-  dtm.qry_order.FieldByName('ref').AsString:=ref+inttostr(MonthOf(date))+inttostr(dayof(date))+'/'+inttostr(id);
+  dtm.qry_order.FieldByName('date').AsDateTime:=date();
   frm_edit_orders.ShowModal;
+
+end;
+
+procedure Tfrm_orders.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  if (dtm.qry_order.State in dsEditModes) or
+  (dtm.qry_order_details.State in dsEditModes) then
+  begin
+    showMessage('please save all changes before close the form');
+    CloseAction:=TCloseAction.caNone;
+  end;
 end;
 
 end.

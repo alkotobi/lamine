@@ -1,0 +1,53 @@
+object frm_colors: Tfrm_colors
+  Left = 333
+  Height = 240
+  Top = 250
+  Width = 318
+  Caption = 'frm_colors'
+  ClientHeight = 240
+  ClientWidth = 318
+  Position = poDesktopCenter
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 204
+    Top = 0
+    Width = 318
+    Align = alTop
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'color'
+        Width = 200
+        FieldName = 'color'
+      end>
+    DataSource = dts_colors
+    TabOrder = 0
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 48
+    Height = 25
+    Top = 208
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dts_colors
+    Options = []
+    TabOrder = 1
+  end
+  object dts_colors: TDataSource
+    DataSet = dtm.qry_colors
+    Left = 129
+    Top = 103
+  end
+end

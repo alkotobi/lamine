@@ -1,0 +1,56 @@
+object frm_broker: Tfrm_broker
+  Left = 333
+  Height = 231
+  Top = 250
+  Width = 411
+  Caption = 'frm_broker'
+  ClientHeight = 231
+  ClientWidth = 411
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  Position = poDesktopCenter
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 200
+    Top = 0
+    Width = 411
+    Align = alTop
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'broker'
+        Width = 250
+        FieldName = 'broker'
+      end>
+    DataSource = dts_broker
+    TabOrder = 0
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 88
+    Height = 25
+    Top = 200
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dts_broker
+    Options = []
+    TabOrder = 1
+  end
+  object dts_broker: TDataSource
+    DataSet = dtm.qry_broker
+    Left = 239
+    Top = 159
+  end
+end

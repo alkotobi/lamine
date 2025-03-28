@@ -1,46 +1,65 @@
 object frm_orders: Tfrm_orders
   Left = 293
-  Height = 510
+  Height = 637
   Top = 250
-  Width = 831
+  Width = 1003
   Caption = 'frm_orders'
-  ClientHeight = 510
-  ClientWidth = 831
+  ClientHeight = 637
+  ClientWidth = 1003
+  OnClose = FormClose
   OnCreate = FormCreate
   object Panel1: TPanel
     Left = 0
     Height = 290
     Top = 0
-    Width = 831
+    Width = 1003
     Align = alTop
     ClientHeight = 290
-    ClientWidth = 831
+    ClientWidth = 1003
     TabOrder = 0
     object Panel2: TPanel
       Left = 1
       Height = 50
       Top = 1
-      Width = 829
+      Width = 1001
       Align = alTop
+      ClientHeight = 50
+      ClientWidth = 1001
       TabOrder = 0
+      object btn_edit_order: TBitBtn
+        Left = 8
+        Height = 30
+        Top = 8
+        Width = 139
+        Action = act_edit_order
+        TabOrder = 0
+      end
+      object btn_new_order: TBitBtn
+        Left = 152
+        Height = 30
+        Top = 8
+        Width = 139
+        Action = act_new_order
+        TabOrder = 1
+      end
+      object btn_client2: TBitBtn
+        Left = 296
+        Height = 30
+        Top = 8
+        Width = 96
+        Action = frm_main.cat_broker
+        TabOrder = 2
+      end
     end
     object Panel3: TPanel
       Left = 1
       Height = 50
       Top = 239
-      Width = 829
+      Width = 1001
       Align = alBottom
       ClientHeight = 50
-      ClientWidth = 829
+      ClientWidth = 1001
       TabOrder = 1
-      object btn_client: TBitBtn
-        Left = 728
-        Height = 30
-        Top = 11
-        Width = 96
-        Action = frm_main.act_clients
-        TabOrder = 0
-      end
       object DBNavigator1: TDBNavigator
         Left = 8
         Height = 25
@@ -57,24 +76,15 @@ object frm_orders: Tfrm_orders
         ClientWidth = 241
         DataSource = dts_ordders
         Options = []
-        TabOrder = 1
+        TabOrder = 0
         VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbPost, nbCancel, nbRefresh]
-      end
-      object btn_new_order: TBitBtn
-        Left = 584
-        Height = 30
-        Top = 11
-        Width = 139
-        Caption = 'NEW ORDER'
-        OnClick = btn_new_orderClick
-        TabOrder = 2
       end
     end
     object DBGrid1: TDBGrid
       Left = 1
       Height = 188
       Top = 51
-      Width = 829
+      Width = 1001
       Align = alClient
       Color = clWindow
       Columns = <      
@@ -84,12 +94,9 @@ object frm_orders: Tfrm_orders
           FieldName = 'id'
         end      
         item
-          PickList.Strings = (
-            'merhab noureddine'
-            'sofia'
-          )
-          Title.Caption = 'CLIENT'
-          FieldName = 'client_name'
+          Title.Caption = 'broker'
+          Width = 250
+          FieldName = 'broker'
         end      
         item
           Title.Caption = 'date'
@@ -113,15 +120,209 @@ object frm_orders: Tfrm_orders
       TabOrder = 2
     end
   end
+  object Panel4: TPanel
+    Left = 0
+    Height = 347
+    Top = 290
+    Width = 1003
+    Align = alClient
+    ClientHeight = 347
+    ClientWidth = 1003
+    TabOrder = 1
+    object Panel5: TPanel
+      Left = 1
+      Height = 50
+      Top = 1
+      Width = 1001
+      Align = alTop
+      ClientHeight = 50
+      ClientWidth = 1001
+      TabOrder = 0
+      object btn_edit_order1: TBitBtn
+        Left = 8
+        Height = 30
+        Top = 8
+        Width = 139
+        Action = act_new_car
+        TabOrder = 0
+      end
+      object btn_new_order1: TBitBtn
+        Left = 152
+        Height = 30
+        Top = 8
+        Width = 139
+        Action = act_change_car
+        TabOrder = 1
+      end
+      object btn_client1: TBitBtn
+        Left = 296
+        Height = 30
+        Top = 8
+        Width = 96
+        Action = frm_main.act_clients
+        TabOrder = 2
+      end
+    end
+    object Panel6: TPanel
+      Left = 1
+      Height = 146
+      Top = 200
+      Width = 1001
+      Align = alBottom
+      ClientHeight = 146
+      ClientWidth = 1001
+      TabOrder = 1
+      object DBNavigator2: TDBNavigator
+        Left = -1
+        Height = 25
+        Top = 120
+        Width = 241
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 241
+        DataSource = dts_orders_det
+        Options = []
+        TabOrder = 0
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbPost, nbCancel, nbRefresh]
+      end
+      object DBEdit1: TDBEdit
+        Left = 80
+        Height = 21
+        Top = 16
+        Width = 176
+        DataField = 'vin'
+        DataSource = dts_orders_det
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object Label1: TLabel
+        Left = 16
+        Height = 16
+        Top = 20
+        Width = 22
+        Caption = 'VIN'
+      end
+    end
+    object DBGrid2: TDBGrid
+      Left = 1
+      Height = 149
+      Top = 51
+      Width = 1001
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          PickList.Strings = (
+            'merhab noureddine'
+            'sofia'
+            'merhab mohamed'
+          )
+          Title.Caption = 'client_name'
+          FieldName = 'client_name'
+        end      
+        item
+          PickList.Strings = (
+            'TOYOTA COROLLA 1.5'
+            'VW golf 280TSI'
+            'VW T-ROC 300 TSI'
+          )
+          Title.Caption = 'model'
+          FieldName = 'model'
+        end      
+        item
+          Title.Caption = 'color'
+          Width = 80
+          FieldName = 'color'
+        end      
+        item
+          Title.Caption = 'date_of_production'
+          Width = 130
+          FieldName = 'date_of_production'
+        end      
+        item
+          Title.Caption = 'km'
+          Width = 50
+          FieldName = 'km'
+        end      
+        item
+          Title.Caption = 'date_ordered'
+          FieldName = 'date_ordered'
+        end      
+        item
+          Title.Caption = 'date_of_delivery'
+          FieldName = 'date_of_delivery'
+        end      
+        item
+          Title.Caption = 'price_usd'
+          FieldName = 'price_usd'
+        end      
+        item
+          Title.Caption = 'frieght_usd'
+          FieldName = 'frieght_usd'
+        end      
+        item
+          PickList.Strings = (
+            'mascara'
+            'oran'
+          )
+          Title.Caption = 'name_city_to'
+          FieldName = 'name_city_to'
+        end      
+        item
+          Title.Caption = 'rate'
+          FieldName = 'rate'
+        end      
+        item
+          PickList.Strings = (
+            'mascara'
+            'oran'
+          )
+          Title.Caption = 'name_city_from'
+          FieldName = 'name_city_from'
+        end>
+      DataSource = dts_orders_det
+      TabOrder = 2
+    end
+  end
   object dts_ordders: TDataSource
     DataSet = dtm.qry_order
     Left = 268
     Top = 180
   end
-  object ActionList1: TActionList
-    Top = 65488
+  object act_orders: TActionList
+    Left = 368
+    Top = 240
     object act_new_order: TAction
-      Caption = 'act_new_order'
+      Caption = 'NEW ORDER'
+      OnExecute = act_new_orderExecute
     end
+    object act_edit_order: TAction
+      Caption = 'CHANGE ORDER'
+      OnExecute = act_edit_orderExecute
+    end
+    object act_new_car: TAction
+      Caption = 'NEW CAR'
+      OnExecute = act_new_carExecute
+    end
+    object act_change_car: TAction
+      Caption = 'CHANGE CAR'
+      OnExecute = act_change_carExecute
+    end
+  end
+  object dts_orders_det: TDataSource
+    DataSet = dtm.qry_order_details
+    Left = 656
+    Top = 512
+  end
+  object dts_car_models: TDataSource
+    DataSet = dtm.qry_car_info
+    Left = 512
+    Top = 528
   end
 end

@@ -12,7 +12,6 @@ object dtm: Tdtm
     MasterSource = dts_groups
     MasterFields = 'id'
     DetailFields = 'id_group'
-    Active = True
     FilterOptions = []
     Left = 136
     Top = 24
@@ -28,22 +27,20 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from `tbl_groups`'
     )
-    Active = True
     FilterOptions = []
     Left = 216
     Top = 24
   end
   object dts_groups: TDataSource
     DataSet = qry_groups
-    Left = 224
-    Top = 88
+    Left = 272
+    Top = 80
   end
   object qry_users: TUniQuery
     Connection = dtm_login.conn
     SQL.Strings = (
       'select * from `tbl_users`'
     )
-    Active = True
     FilterOptions = []
     Left = 288
     Top = 24
@@ -114,7 +111,6 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_transactions'
     )
-    Active = True
     FilterOptions = []
     OnCalcFields = qry_transactionsCalcFields
     Left = 352
@@ -301,8 +297,8 @@ object dtm: Tdtm
     )
     Active = True
     FilterOptions = []
-    Left = 440
-    Top = 32
+    Left = 640
+    Top = 24
     object qry_count_zerocount_zero_users: TLargeintField
       FieldKind = fkData
       FieldName = 'count_zero_users'
@@ -319,7 +315,7 @@ object dtm: Tdtm
       'select * from tbl_brands'
     )
     FilterOptions = []
-    Left = 96
+    Left = 64
     Top = 192
   end
   object qry_car_names: TUniQuery
@@ -331,8 +327,7 @@ object dtm: Tdtm
     MasterFields = 'id'
     DetailFields = 'id_brand'
     FilterOptions = []
-    OnCalcFields = qry_car_namesCalcFields
-    Left = 168
+    Left = 152
     Top = 192
     ParamData = <    
       item
@@ -367,29 +362,6 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-    end
-    object car_brand: TWideStringField
-      FieldKind = fkLookup
-      FieldName = 'brand'
-      Index = 3
-      KeyFields = 'id_brand'
-      LookupCache = False
-      LookupDataSet = qry_brands
-      LookupKeyFields = 'id'
-      LookupResultField = 'brand'
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
-    object qry_car_namesbrand_name: TStringField
-      FieldKind = fkCalculated
-      FieldName = 'brand_name'
-      Index = 4
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 255
     end
   end
   object qry_car_models: TUniQuery
@@ -447,28 +419,15 @@ object dtm: Tdtm
       Required = False
       BlobType = ftWideMemo
     end
-    object car_name: TWideStringField
-      FieldKind = fkLookup
-      FieldName = 'car_name'
-      Index = 4
-      KeyFields = 'id_car_name'
-      LookupCache = False
-      LookupDataSet = qry_car_names
-      LookupKeyFields = 'id'
-      LookupResultField = 'brand_name'
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
   end
   object dts_car_name: TDataSource
     DataSet = qry_car_names
-    Left = 192
-    Top = 256
+    Left = 80
+    Top = 264
   end
   object dts_brand: TDataSource
     DataSet = qry_brands
-    Left = 112
+    Left = 32
     Top = 264
   end
   object qry_id_pictures: TUniQuery
@@ -524,7 +483,7 @@ object dtm: Tdtm
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
+      Required = False
       Size = 10
     end
     object qry_clientsstreet: TWideStringField
@@ -534,7 +493,7 @@ object dtm: Tdtm
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
+      Required = False
       Size = 255
     end
     object qry_clientsneiberhood: TWideStringField
@@ -554,7 +513,7 @@ object dtm: Tdtm
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
+      Required = False
     end
     object qry_clientsid_country: TLongintField
       FieldKind = fkData
@@ -563,7 +522,7 @@ object dtm: Tdtm
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
+      Required = False
     end
     object qry_clientspostal_code: TWideStringField
       FieldKind = fkData
@@ -572,7 +531,7 @@ object dtm: Tdtm
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
+      Required = False
       Size = 10
     end
     object city_name: TWideStringField
@@ -668,74 +627,6 @@ object dtm: Tdtm
       Size = 255
     end
   end
-  object qry_order: TUniQuery
-    Connection = dtm_login.conn
-    SQL.Strings = (
-      'select * from tbl_orders'
-    )
-    FilterOptions = []
-    Left = 392
-    Top = 152
-    object qry_orderid: TLargeintField
-      FieldKind = fkData
-      FieldName = 'id'
-      Index = 0
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
-    object qry_orderdate: TDateField
-      FieldKind = fkData
-      FieldName = 'date'
-      Index = 1
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = True
-    end
-    object qry_orderref: TWideStringField
-      FieldKind = fkData
-      FieldName = 'ref'
-      Index = 2
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = True
-    end
-    object qry_ordervirsement: TFloatField
-      FieldKind = fkData
-      FieldName = 'virsement'
-      Index = 3
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Precision = 10
-    end
-    object qry_orderid_client: TLongintField
-      FieldKind = fkData
-      FieldName = 'id_client'
-      Index = 4
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = True
-    end
-    object client_name: TWideStringField
-      FieldKind = fkLookup
-      FieldName = 'client_name'
-      Index = 5
-      KeyFields = 'id_client'
-      LookupCache = False
-      LookupDataSet = qry_clients
-      LookupKeyFields = 'id'
-      LookupResultField = 'name'
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
-  end
   object qry_order_details: TUniQuery
     Connection = dtm_login.conn
     SQL.Strings = (
@@ -802,24 +693,25 @@ object dtm: Tdtm
       ReadOnly = False
       Required = True
     end
-    object qry_order_detailscolor: TLongintField
+    object qry_order_detailsvin: TWideStringField
       FieldKind = fkData
-      FieldName = 'color'
+      FieldName = 'vin'
       Index = 5
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
+      Required = False
+      Size = 50
     end
-    object qry_order_detailsvin: TWideStringField
+    object qry_order_detailscolor: TWideStringField
       FieldKind = fkData
-      FieldName = 'vin'
+      FieldName = 'color'
       Index = 6
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      Size = 50
+      Size = 255
     end
     object qry_order_detailsdate_of_production: TDateField
       FieldKind = fkData
@@ -828,7 +720,7 @@ object dtm: Tdtm
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
+      Required = False
     end
     object qry_order_detailskm: TLongintField
       FieldKind = fkData
@@ -846,7 +738,7 @@ object dtm: Tdtm
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
+      Required = False
     end
     object qry_order_detailsdate_ordered: TDateField
       FieldKind = fkData
@@ -905,15 +797,63 @@ object dtm: Tdtm
       Required = False
       Precision = 10
     end
-    object TWideStringField
+    object name_city_to: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'name_city_to'
+      Index = 16
+      KeyFields = 'ship_to_id_city'
+      LookupCache = False
+      LookupDataSet = qry_cities
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object name_city_from: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'name_city_from'
+      Index = 17
+      KeyFields = 'ship_from_id_city'
+      LookupCache = False
+      LookupDataSet = qry_cities
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object model: TWideStringField
       FieldKind = fkLookup
       FieldName = 'model'
-      Index = 16
+      Index = 18
       KeyFields = 'id_car_model'
       LookupCache = False
-      LookupDataSet = qry_car_models
+      LookupDataSet = qry_car_info
+      LookupKeyFields = 'model_id'
+      LookupResultField = 'car_info'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_order_detailsid_color: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_color'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'color1'
+      Index = 20
+      KeyFields = 'id_color'
+      LookupCache = False
+      LookupDataSet = qry_colors
       LookupKeyFields = 'id'
-      LookupResultField = 'model'
+      LookupResultField = 'color'
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
@@ -921,7 +861,168 @@ object dtm: Tdtm
   end
   object dts_order: TDataSource
     DataSet = qry_order
-    Left = 320
-    Top = 152
+    Left = 328
+    Top = 80
+  end
+  object qry_car_info: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'SELECT '
+      '    tbl_car_model.id AS model_id,'
+      '    CONCAT(tbl_brands.brand, '' '', tbl_car_name.name, '' '', tbl_car_model.model) AS car_info'
+      'FROM '
+      '    tbl_brands'
+      'JOIN '
+      '    tbl_car_name ON tbl_brands.id = tbl_car_name.id_brand'
+      'JOIN '
+      '    tbl_car_model ON tbl_car_name.id = tbl_car_model.id_car_name;    '
+    )
+    FilterOptions = []
+    Left = 160
+    Top = 136
+    object qry_car_infomodel_id: TLargeintField
+      FieldKind = fkData
+      FieldName = 'model_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_car_infocar_info: TWideStringField
+      FieldKind = fkData
+      FieldName = 'car_info'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 752
+    end
+  end
+  object qry_broker: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from broker'
+    )
+    FilterOptions = []
+    Left = 328
+    Top = 165
+    object qry_brokerid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_brokerbroker: TWideStringField
+      FieldKind = fkData
+      FieldName = 'broker'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+  end
+  object qry_order: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_orders'
+    )
+    FilterOptions = []
+    Left = 403
+    Top = 165
+    object qry_orderid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_orderdate: TDateField
+      FieldKind = fkData
+      FieldName = 'date'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_orderref: TWideStringField
+      FieldKind = fkData
+      FieldName = 'ref'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_ordervirsement: TFloatField
+      FieldKind = fkData
+      FieldName = 'virsement'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 10
+    end
+    object qry_orderid_broker: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_broker'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'broker'
+      Index = 5
+      KeyFields = 'id_broker'
+      LookupCache = False
+      LookupDataSet = qry_broker
+      LookupKeyFields = 'id'
+      LookupResultField = 'broker'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qry_colors: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from colors'
+    )
+    Active = True
+    FilterOptions = []
+    Left = 400
+    Top = 272
+    object qry_colorsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_colorscolor: TWideStringField
+      FieldKind = fkData
+      FieldName = 'color'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
   end
 end

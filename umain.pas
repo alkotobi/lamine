@@ -5,15 +5,19 @@ unit umain;
 interface
 
 uses
-  upermissions,uorders, ucountries,ucities,uclients, utransactions,ucars, uusers, uchange_pass, udtm, Classes, SysUtils,
+  upermissions,uclors,uorders,ubroker, ucountries,ucities,uclients, utransactions,ucars, uusers, uchange_pass, udtm, Classes, SysUtils,
   DB, Forms, Controls, Graphics, Dialogs, ActnList, Menus, ExtCtrls, StdCtrls,
-  DBCtrls;
+  DBCtrls, Buttons;
 
 type
 
   { Tfrm_main }
 
   Tfrm_main = class(TForm)
+    act_colors: TAction;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    cat_broker: TAction;
     act_orderes: TAction;
     act_cities: TAction;
     act_clients: TAction;
@@ -34,6 +38,7 @@ type
     MenuItem10: TMenuItem;
     MenuItem11: TMenuItem;
     MenuItem12: TMenuItem;
+    MenuItem13: TMenuItem;
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
@@ -48,11 +53,13 @@ type
     procedure act_change_passExecute(Sender: TObject);
     procedure act_citiesExecute(Sender: TObject);
     procedure act_clientsExecute(Sender: TObject);
+    procedure act_colorsExecute(Sender: TObject);
     procedure act_countriesExecute(Sender: TObject);
     procedure act_groupsExecute(Sender: TObject);
     procedure act_orderesExecute(Sender: TObject);
     procedure act_transactionsExecute(Sender: TObject);
     procedure act_usersExecute(Sender: TObject);
+    procedure cat_brokerExecute(Sender: TObject);
   private
 
   public
@@ -100,6 +107,15 @@ begin
    frm_users.Show;
 end;
 
+procedure Tfrm_main.cat_brokerExecute(Sender: TObject);
+begin
+    if not Assigned(frm_broker) then
+   begin
+       Application.CreateForm(Tfrm_broker, frm_broker);
+   end;
+   frm_broker.Show;
+end;
+
 procedure Tfrm_main.actUpdate(AAction: TBasicAction; var Handled: Boolean);
 begin
   act_groups.Enabled:=dtm_login.qry_permissions.FieldByName(can_change_groups).AsBoolean;
@@ -136,6 +152,15 @@ begin
       Application.CreateForm(Tfrm_clients, frm_clients);
   end;
   frm_clients.Show;
+end;
+
+procedure Tfrm_main.act_colorsExecute(Sender: TObject);
+begin
+     if not Assigned(frm_colors) then
+   begin
+       Application.CreateForm(Tfrm_colors, frm_colors);
+   end;
+   frm_colors.Show;
 end;
 
 procedure Tfrm_main.act_countriesExecute(Sender: TObject);

@@ -189,6 +189,7 @@
         <Filename Value="uorders_edit.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frm_edit_orders"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
       <Unit>
@@ -196,6 +197,26 @@
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frm_orders"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uorder_det_edit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_order_detail_edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ubroker.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_broker"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uclors.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_colors"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>

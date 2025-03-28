@@ -13,7 +13,7 @@ uses
   Forms, Controls, datetimectrls, umain, ulogin, udtm, unidac10, liteprovider10,
   myprovider10, udtm_main, upermissions, uchange_pass, uusers, utransactions,
   ustart, utransfer, utreceive, ucars, uclients, ucountries, ucities,
-  uorders_edit, uorders;
+  uorders_edit, uorders, uorder_det_edit, ubroker, uclors;
 
 {$R *.res}
 
@@ -36,6 +36,7 @@ begin
   Application.CreateForm(Tfrm_transfer, frm_transfer);
   Application.CreateForm(Tfrm_start, frm_start);
   Screen.Cursor := crDefault;
+  Application.CreateForm(Tfrm_colors, frm_colors);
   Application.Run;
 end.
 
