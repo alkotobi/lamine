@@ -17,6 +17,8 @@ type
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
+    BitBtn6: TBitBtn;
     dbcmb_car: TDBLookupComboBox;
     dbcmb_car1: TDBLookupComboBox;
     dbcmb_car2: TDBLookupComboBox;

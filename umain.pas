@@ -39,6 +39,7 @@ type
     MenuItem11: TMenuItem;
     MenuItem12: TMenuItem;
     MenuItem13: TMenuItem;
+    MenuItem14: TMenuItem;
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
@@ -104,7 +105,7 @@ begin
    begin
        Application.CreateForm(Tfrm_users, frm_users);
    end;
-   frm_users.Show;
+   frm_users.ShowModal;
 end;
 
 procedure Tfrm_main.cat_brokerExecute(Sender: TObject);
@@ -113,7 +114,7 @@ begin
    begin
        Application.CreateForm(Tfrm_broker, frm_broker);
    end;
-   frm_broker.Show;
+   frm_broker.ShowModal;
 end;
 
 procedure Tfrm_main.actUpdate(AAction: TBasicAction; var Handled: Boolean);
@@ -128,7 +129,7 @@ begin
    begin
        Application.CreateForm(Tfrm_cars, frm_cars);
    end;
-   frm_cars.Show;
+   frm_cars.ShowModal;
 end;
 
 procedure Tfrm_main.act_change_passExecute(Sender: TObject);
@@ -142,7 +143,7 @@ begin
   begin
       Application.CreateForm(Tfrm_cities, frm_cities);
   end;
-  frm_cities.Show;
+  frm_cities.ShowModal;
 end;
 
 procedure Tfrm_main.act_clientsExecute(Sender: TObject);
@@ -151,7 +152,7 @@ begin
   begin
       Application.CreateForm(Tfrm_clients, frm_clients);
   end;
-  frm_clients.Show;
+  frm_clients.ShowModal;
 end;
 
 procedure Tfrm_main.act_colorsExecute(Sender: TObject);
@@ -160,7 +161,7 @@ begin
    begin
        Application.CreateForm(Tfrm_colors, frm_colors);
    end;
-   frm_colors.Show;
+   frm_colors.ShowModal;
 end;
 
 procedure Tfrm_main.act_countriesExecute(Sender: TObject);
@@ -169,7 +170,7 @@ begin
    begin
        Application.CreateForm(Tfrm_countries, frm_countries);
    end;
-   frm_countries.Show;
+   frm_countries.ShowModal;
 end;
 
 end.

@@ -172,6 +172,9 @@ object frm_main: Tfrm_main
       object MenuItem13: TMenuItem
         Action = cat_broker
       end
+      object MenuItem14: TMenuItem
+        Action = act_colors
+      end
     end
   end
   object DataSource1: TDataSource

@@ -322,6 +322,22 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
     Action = frm_main.act_cities
     TabOrder = 5
   end
+  object BitBtn5: TBitBtn
+    Left = 224
+    Height = 30
+    Top = 267
+    Width = 104
+    Action = frm_main.act_cars
+    TabOrder = 6
+  end
+  object BitBtn6: TBitBtn
+    Left = 336
+    Height = 30
+    Top = 267
+    Width = 104
+    Action = frm_main.act_clients
+    TabOrder = 7
+  end
   object dts_clients: TDataSource
     DataSet = dtm.qry_clients
     Left = 104
@@ -329,8 +345,8 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
   end
   object dts_car_info: TDataSource
     DataSet = dtm.qry_car_info
-    Left = 112
-    Top = 32
+    Left = 80
+    Top = 16
   end
   object dts_cities: TDataSource
     DataSet = dtm.qry_cities
