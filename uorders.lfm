@@ -117,6 +117,7 @@ object frm_orders: Tfrm_orders
           FieldName = 'id_client'
         end>
       DataSource = dts_ordders
+      ReadOnly = True
       TabOrder = 2
     end
   end
@@ -271,6 +272,7 @@ object frm_orders: Tfrm_orders
           FieldName = 'name_city_from'
         end>
       DataSource = dts_orders_det
+      ReadOnly = True
       TabOrder = 2
     end
   end

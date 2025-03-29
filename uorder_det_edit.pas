@@ -37,12 +37,14 @@ type
     DBDateEdit1: TDBDateEdit;
     DBDateEdit2: TDBDateEdit;
     DBDateEdit3: TDBDateEdit;
+    DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
     DBEdit4: TDBEdit;
     DBEdit5: TDBEdit;
+    dts_cities_cn: TDataSource;
     edt_deposit: TDBEdit;
-    dts_cities: TDataSource;
+    dts_cities_alg: TDataSource;
     dts_colors: TDataSource;
     edt_vin: TDBEdit;
     dts_car_info: TDataSource;

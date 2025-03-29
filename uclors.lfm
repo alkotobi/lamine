@@ -6,6 +6,7 @@ object frm_colors: Tfrm_colors
   Caption = 'frm_colors'
   ClientHeight = 240
   ClientWidth = 318
+  OnCreate = FormCreate
   Position = poDesktopCenter
   object DBGrid1: TDBGrid
     Left = 0

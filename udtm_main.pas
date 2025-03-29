@@ -5,7 +5,7 @@ unit udtm_main;
 interface
 
 uses
-  Classes, SysUtils, Menus, DB,udtm, Uni, BGRAImageList, BGRASVGImageList;
+  Classes, SysUtils, Menus,StrUtils, DB,udtm, Uni, BGRAImageList, BGRASVGImageList;
 
 type
 
@@ -29,6 +29,8 @@ type
     name_city_from: TWideStringField;
     name_city_to: TWideStringField;
     order_details_client_name: TWideStringField;
+    qry_brandsbrand: TWideStringField;
+    qry_brandsid: TLargeintField;
     qry_brokerbroker: TWideStringField;
     qry_brokerid: TLargeintField;
     qry_car_modelsid: TLargeintField;
@@ -45,9 +47,16 @@ type
     qry_car_namesid_brand1: TLongintField;
     qry_car_namesname: TWideStringField;
     qry_car_namesname1: TWideStringField;
+    qry_cities_alg: TUniQuery;
     qry_citiesid: TLargeintField;
+    qry_citiesid_country: TLongintField;
     qry_citiesname: TWideStringField;
     qry_citiespostal_code: TWideStringField;
+    qry_cities_cn: TUniQuery;
+    qry_cities_algid: TLargeintField;
+    qry_cities_algid1: TLargeintField;
+    qry_cities_algname: TWideStringField;
+    qry_cities_algname1: TWideStringField;
     qry_clientscedit: TFloatField;
     qry_clientsdoor_no: TWideStringField;
     qry_clientsid: TLargeintField;
@@ -125,6 +134,7 @@ type
     qry_broker: TUniQuery;
     qry_order: TUniQuery;
     qry_colors: TUniQuery;
+    procedure qry_colorscolorSetText(Sender: TField; const aText: string);
     procedure qry_transactionsCalcFields(DataSet: TDataSet);
   private
 
@@ -162,6 +172,11 @@ begin
   begin
     qry_transactionsamount_usd.AsCurrency:= qry_transactionsamount.AsCurrency/qry_transactionsrate.AsCurrency;
   end;
+end;
+
+procedure Tdtm.qry_colorscolorSetText(Sender: TField; const aText: string);
+begin
+    Sender.AsString := UpperCase(aText);
 end;
 
 end.

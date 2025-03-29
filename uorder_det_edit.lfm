@@ -194,7 +194,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       KeyField = 'id'
       ListField = 'name'
       ListFieldIndex = 0
-      ListSource = dts_cities
+      ListSource = dts_cities_cn
       LookupCache = False
       TabOrder = 7
     end
@@ -210,7 +210,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       KeyField = 'id'
       ListField = 'name'
       ListFieldIndex = 0
-      ListSource = dts_cities
+      ListSource = dts_cities_alg
       LookupCache = False
       TabOrder = 8
     end
@@ -313,6 +313,16 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       ReadOnly = True
       TabOrder = 14
       ValueUnchecked = '0'
+    end
+    object DBEdit1: TDBEdit
+      Left = 468
+      Height = 27
+      Top = 128
+      Width = 80
+      DataField = 'id_color'
+      DataSource = frm_orders.dts_orders_det
+      MaxLength = 0
+      TabOrder = 15
     end
   end
   object BitBtn1: TBitBtn
@@ -417,18 +427,18 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
   end
   object dts_clients: TDataSource
     DataSet = dtm.qry_clients
-    Left = 624
-    Top = 272
+    Left = 616
+    Top = 264
   end
   object dts_car_info: TDataSource
     DataSet = dtm.qry_car_info
-    Left = 592
-    Top = 288
+    Left = 576
+    Top = 272
   end
-  object dts_cities: TDataSource
-    DataSet = dtm.qry_cities
+  object dts_cities_alg: TDataSource
+    DataSet = dtm.qry_cities_alg
     Left = 664
-    Top = 264
+    Top = 248
   end
   object dts_colors: TDataSource
     DataSet = dtm.qry_colors
@@ -455,5 +465,10 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       Caption = 'SET DEPOSIT'
       OnExecute = act_set_depositExecute
     end
+  end
+  object dts_cities_cn: TDataSource
+    DataSet = dtm.qry_cities_cn
+    Left = 692
+    Top = 276
   end
 end

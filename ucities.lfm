@@ -2,10 +2,10 @@ object frm_cities: Tfrm_cities
   Left = 333
   Height = 228
   Top = 250
-  Width = 337
+  Width = 384
   Caption = 'frm_cities'
   ClientHeight = 228
-  ClientWidth = 337
+  ClientWidth = 384
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poDesktopCenter
@@ -13,7 +13,7 @@ object frm_cities: Tfrm_cities
     Left = 0
     Height = 200
     Top = 0
-    Width = 337
+    Width = 384
     Align = alTop
     Color = clWindow
     Columns = <    
@@ -30,6 +30,10 @@ object frm_cities: Tfrm_cities
       item
         Title.Caption = 'postal_code'
         FieldName = 'postal_code'
+      end    
+      item
+        Title.Caption = 'country'
+        FieldName = 'name1'
       end>
     DataSource = dts_cities
     TabOrder = 0

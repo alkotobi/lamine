@@ -338,6 +338,26 @@ object dtm: Tdtm
     FilterOptions = []
     Left = 64
     Top = 192
+    object qry_brandsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_brandsbrand: TWideStringField
+      FieldKind = fkData
+      FieldName = 'brand'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      OnSetText = qry_colorscolorSetText
+      Size = 250
+    end
   end
   object qry_car_names: TUniQuery
     Connection = dtm_login.conn
@@ -373,6 +393,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
+      OnSetText = qry_colorscolorSetText
       Size = 250
     end
     object qry_car_namesid_brand: TLongintField
@@ -419,6 +440,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
+      OnSetText = qry_colorscolorSetText
       Size = 250
     end
     object qry_car_modelsid_car_name: TLongintField
@@ -485,6 +507,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
+      OnSetText = qry_colorscolorSetText
       Size = 255
     end
     object qry_clientscedit: TFloatField
@@ -515,6 +538,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      OnSetText = qry_colorscolorSetText
       Size = 255
     end
     object qry_clientsneiberhood: TWideStringField
@@ -525,6 +549,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      OnSetText = qry_colorscolorSetText
       Size = 255
     end
     object qry_clientsid_city: TLongintField
@@ -607,6 +632,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
+      OnSetText = qry_colorscolorSetText
       Size = 255
     end
     object qry_citiespostal_code: TWideStringField
@@ -618,6 +644,28 @@ object dtm: Tdtm
       ReadOnly = False
       Required = False
       Size = 10
+    end
+    object qry_citiesid_country: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_country'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'name1'
+      Index = 4
+      KeyFields = 'id_country'
+      LookupCache = False
+      LookupDataSet = qry_countries
+      LookupKeyFields = 'id'
+      LookupResultField = 'name'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
     end
   end
   object qry_countries: TUniQuery
@@ -645,6 +693,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
+      OnSetText = qry_colorscolorSetText
       Size = 255
     end
   end
@@ -722,6 +771,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      OnSetText = qry_colorscolorSetText
       Size = 50
     end
     object qry_order_detailscolor: TWideStringField
@@ -731,7 +781,7 @@ object dtm: Tdtm
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
+      Required = False
       Size = 255
     end
     object qry_order_detailsdate_of_production: TDateField
@@ -744,6 +794,7 @@ object dtm: Tdtm
       Required = False
     end
     object qry_order_detailskm: TLongintField
+      DefaultExpression = '0'
       FieldKind = fkData
       FieldName = 'km'
       Index = 8
@@ -815,7 +866,7 @@ object dtm: Tdtm
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = False
+      Required = True
       Precision = 10
     end
     object name_city_to: TWideStringField
@@ -880,6 +931,7 @@ object dtm: Tdtm
       Required = False
     end
     object qry_order_detailsdeposit_USD: TFloatField
+      DefaultExpression = '0'
       FieldKind = fkData
       FieldName = 'deposit_USD'
       Index = 21
@@ -890,6 +942,7 @@ object dtm: Tdtm
       Precision = 10
     end
     object qry_order_detailspayed_all: TBooleanField
+      DefaultExpression = 'false'
       FieldKind = fkData
       FieldName = 'payed_all'
       Index = 22
@@ -900,6 +953,7 @@ object dtm: Tdtm
       DisplayValues = 'True;False'
     end
     object qry_order_detailsloaded: TBooleanField
+      DefaultExpression = 'false'
       FieldKind = fkData
       FieldName = 'loaded'
       Index = 23
@@ -976,6 +1030,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      OnSetText = qry_colorscolorSetText
       Size = 255
     end
   end
@@ -1013,6 +1068,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
+      OnSetText = qry_colorscolorSetText
     end
     object qry_ordervirsement: TFloatField
       FieldKind = fkData
@@ -1072,6 +1128,7 @@ object dtm: Tdtm
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      OnSetText = qry_colorscolorSetText
       Size = 255
     end
   end
@@ -1464,5 +1521,67 @@ object dtm: Tdtm
       672667743B262378413B266C743B2F7376672667743B262378413B222F3E0A3C
       2F434F4E4649473E0A
     }
+  end
+  object qry_cities_alg: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'SELECT tbl_cities.id,tbl_cities.name'
+      'FROM tbl_cities'
+      'JOIN tbl_countries ON tbl_cities.id_country = tbl_countries.id'
+      'WHERE tbl_countries.name = ''Algeria'';'
+    )
+    FilterOptions = []
+    Left = 552
+    Top = 272
+    object qry_cities_algid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_cities_algname: TWideStringField
+      FieldKind = fkData
+      FieldName = 'name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 255
+    end
+  end
+  object qry_cities_cn: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'SELECT tbl_cities.id,tbl_cities.name'
+      'FROM tbl_cities'
+      'JOIN tbl_countries ON tbl_cities.id_country = tbl_countries.id'
+      'WHERE tbl_countries.name = ''china'';'
+    )
+    FilterOptions = []
+    Left = 616
+    Top = 272
+    object qry_cities_algid1: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_cities_algname1: TWideStringField
+      FieldKind = fkData
+      FieldName = 'name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 255
+    end
   end
 end

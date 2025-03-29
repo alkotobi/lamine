@@ -16,6 +16,7 @@ type
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
     dts_colors: TDataSource;
+    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -28,6 +29,13 @@ var
 implementation
 
 {$R *.lfm}
+
+{ Tfrm_colors }
+
+procedure Tfrm_colors.FormCreate(Sender: TObject);
+begin
+  dtm.qry_colors.Open;
+end;
 
 end.
 

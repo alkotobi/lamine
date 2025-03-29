@@ -63,6 +63,7 @@ type
     procedure act_transactionsExecute(Sender: TObject);
     procedure act_usersExecute(Sender: TObject);
     procedure cat_brokerExecute(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -117,6 +118,11 @@ begin
        Application.CreateForm(Tfrm_broker, frm_broker);
    end;
    frm_broker.ShowModal;
+end;
+
+procedure Tfrm_main.FormCreate(Sender: TObject);
+begin
+  dtm.qry_count_zero.Open;
 end;
 
 procedure Tfrm_main.actUpdate(AAction: TBasicAction; var Handled: Boolean);

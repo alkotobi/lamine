@@ -74,6 +74,8 @@ begin
     qry_cities.Open;
     qry_colors.Open;
     qry_car_info.Open;
+    qry_cities_alg.open;
+    qry_cities_cn.open;
   end;
 end;
 
