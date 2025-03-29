@@ -35,9 +35,170 @@ object dtm_login: Tdtm_login
   end
   object qry_permissions: TUniQuery
     Connection = conn
+    SQL.Strings = (
+      'select * from tbl_permissions'
+    )
     FilterOptions = []
     Left = 32
     Top = 32
+    object qry_permissionsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_permissionsid_group: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_group'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_permissionscan_confirm_will_send: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_confirm_will_send'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_confirm_send: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_confirm_send'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_confirm_receive: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_confirm_receive'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_change_groups: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_change_groups'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_change_users: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_change_users'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_order_det_set_vin: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_order_det_set_vin'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_order_det_set_deposit: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_order_det_set_deposit'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_order_det_set_payed_all: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_order_det_set_payed_all'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_order_det_set_loaded: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_order_det_set_loaded'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_order_det_edit: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_order_det_edit'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_order_det_new: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_order_det_new'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_order_c: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_order_c'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_order_new: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_order_new'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object qry_permissionscan_order_edit: TBooleanField
+      FieldKind = fkData
+      FieldName = 'can_order_edit'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
   end
   object SQLiteUniProvider1: TSQLiteUniProvider
     Left = 32

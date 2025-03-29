@@ -1,11 +1,11 @@
 object frm_order_detail_edit: Tfrm_order_detail_edit
   Left = 333
-  Height = 323
+  Height = 340
   Top = 250
-  Width = 821
+  Width = 803
   Caption = 'frm_order_detail_edit'
-  ClientHeight = 323
-  ClientWidth = 821
+  ClientHeight = 340
+  ClientWidth = 803
   Font.CharSet = ANSI_CHARSET
   Font.Height = -19
   Font.Name = '.SF NS'
@@ -13,17 +13,17 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
   Position = poDesktopCenter
   object Panel1: TPanel
     Left = 0
-    Height = 256
+    Height = 264
     Top = 0
-    Width = 821
+    Width = 803
     Align = alTop
-    ClientHeight = 256
-    ClientWidth = 821
+    ClientHeight = 264
+    ClientWidth = 803
     TabOrder = 0
     object Label1: TLabel
       Left = 18
       Height = 22
-      Top = 23
+      Top = 19
       Width = 64
       Caption = 'CLIENT'
     end
@@ -62,7 +62,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
     object Label2: TLabel
       Left = 16
       Height = 22
-      Top = 51
+      Top = 47
       Width = 37
       Caption = 'CAR'
     end
@@ -73,20 +73,21 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       Width = 230
       DataField = 'vin'
       DataSource = frm_orders.dts_orders_det
+      ReadOnly = True
       MaxLength = 0
       TabOrder = 2
     end
     object Label3: TLabel
       Left = 18
       Height = 22
-      Top = 79
+      Top = 75
       Width = 30
       Caption = 'VIN'
     end
     object Label4: TLabel
       Left = 496
       Height = 22
-      Top = 24
+      Top = 19
       Width = 63
       Caption = 'COLOR'
     end
@@ -109,7 +110,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
     object Label5: TLabel
       Left = 18
       Height = 22
-      Top = 113
+      Top = 108
       Width = 136
       Caption = 'DATE ORDERED'
     end
@@ -160,14 +161,14 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
     object Label8: TLabel
       Left = 499
       Height = 22
-      Top = 57
+      Top = 47
       Width = 28
       Caption = 'KM'
     end
     object DBEdit2: TDBEdit
       Left = 600
       Height = 27
-      Top = 56
+      Top = 47
       Width = 176
       DataField = 'km'
       DataSource = frm_orders.dts_orders_det
@@ -177,14 +178,14 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
     object Label9: TLabel
       Left = 496
       Height = 22
-      Top = 96
+      Top = 75
       Width = 98
       Caption = 'SHIP FROM'
     end
     object dbcmb_car1: TDBLookupComboBox
       Left = 600
       Height = 20
-      Top = 96
+      Top = 75
       Width = 175
       AutoComplete = True
       CharCase = ecUppercase
@@ -200,7 +201,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
     object dbcmb_car2: TDBLookupComboBox
       Left = 601
       Height = 20
-      Top = 124
+      Top = 108
       Width = 175
       AutoComplete = True
       CharCase = ecUppercase
@@ -216,7 +217,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
     object Label10: TLabel
       Left = 496
       Height = 22
-      Top = 124
+      Top = 108
       Width = 71
       Caption = 'SHIP TO'
     end
@@ -271,29 +272,73 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       MaxLength = 0
       TabOrder = 11
     end
+    object edt_deposit: TDBEdit
+      Left = 192
+      Height = 27
+      Top = 200
+      Width = 230
+      DataField = 'deposit_USD'
+      DataSource = frm_orders.dts_orders_det
+      ReadOnly = True
+      MaxLength = 0
+      TabOrder = 12
+    end
+    object Label14: TLabel
+      Left = 16
+      Height = 22
+      Top = 200
+      Width = 121
+      Caption = 'DEPOSIT USD'
+    end
+    object ckb_loaded: TDBCheckBox
+      Left = 18
+      Height = 23
+      Top = 232
+      Width = 154
+      Caption = 'LOADED'
+      DataField = 'loaded'
+      DataSource = frm_orders.dts_orders_det
+      ReadOnly = True
+      TabOrder = 13
+      ValueUnchecked = '0'
+    end
+    object ckb_payed: TDBCheckBox
+      Left = 200
+      Height = 23
+      Top = 232
+      Width = 154
+      Caption = 'PAYED'
+      DataField = 'payed_all'
+      DataSource = frm_orders.dts_orders_det
+      ReadOnly = True
+      TabOrder = 14
+      ValueUnchecked = '0'
+    end
   end
   object BitBtn1: TBitBtn
-    Left = 680
+    Left = 712
     Height = 30
     Top = 267
-    Width = 96
-    Caption = 'SAVE'
+    Width = 73
+    Images = dtm.BGRAImageList1
+    ImageIndex = 0
     OnClick = BitBtn1Click
     TabOrder = 1
   end
   object BitBtn2: TBitBtn
-    Left = 576
+    Left = 712
     Height = 30
-    Top = 267
-    Width = 97
-    Caption = 'CANCEL'
+    Top = 304
+    Width = 73
+    Images = dtm.BGRAImageList1
+    ImageIndex = 1
     OnClick = BitBtn2Click
     TabOrder = 2
   end
   object dbcmb_client1: TDBLookupComboBox
     Left = 600
     Height = 20
-    Top = 24
+    Top = 19
     Width = 176
     AutoComplete = True
     CharCase = ecUppercase
@@ -338,24 +383,77 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
     Action = frm_main.act_clients
     TabOrder = 7
   end
+  object BitBtn7: TBitBtn
+    Left = 16
+    Height = 30
+    Top = 304
+    Width = 115
+    Action = act_set_vn
+    TabOrder = 8
+  end
+  object BitBtn8: TBitBtn
+    Left = 136
+    Height = 30
+    Top = 304
+    Width = 144
+    Action = act_set_loaded
+    TabOrder = 9
+  end
+  object BitBtn9: TBitBtn
+    Left = 280
+    Height = 30
+    Top = 304
+    Width = 144
+    Action = act_set_payed
+    TabOrder = 10
+  end
+  object BitBtn10: TBitBtn
+    Left = 424
+    Height = 30
+    Top = 304
+    Width = 144
+    Action = act_set_deposit
+    TabOrder = 11
+  end
   object dts_clients: TDataSource
     DataSet = dtm.qry_clients
-    Left = 104
-    Top = 48
+    Left = 624
+    Top = 272
   end
   object dts_car_info: TDataSource
     DataSet = dtm.qry_car_info
-    Left = 80
-    Top = 16
+    Left = 592
+    Top = 288
   end
   object dts_cities: TDataSource
     DataSet = dtm.qry_cities
-    Left = 144
-    Top = 24
+    Left = 664
+    Top = 264
   end
   object dts_colors: TDataSource
     DataSet = dtm.qry_colors
-    Left = 172
-    Top = 52
+    Left = 656
+    Top = 304
+  end
+  object ActionList1: TActionList
+    OnUpdate = ActionList1Update
+    Left = 448
+    Top = 224
+    object act_set_vn: TAction
+      Caption = 'SET VIN'
+      OnExecute = act_set_vnExecute
+    end
+    object act_set_loaded: TAction
+      Caption = 'SET LOADED'
+      OnExecute = act_set_loadedExecute
+    end
+    object act_set_payed: TAction
+      Caption = 'SET PAYED'
+      OnExecute = act_set_payedExecute
+    end
+    object act_set_deposit: TAction
+      Caption = 'SET DEPOSIT'
+      OnExecute = act_set_depositExecute
+    end
   end
 end

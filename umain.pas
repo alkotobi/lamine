@@ -5,9 +5,10 @@ unit umain;
 interface
 
 uses
-  upermissions,uclors,uorders,ubroker, ucountries,ucities,uclients, utransactions,ucars, uusers, uchange_pass, udtm, Classes, SysUtils,
-  DB, Forms, Controls, Graphics, Dialogs, ActnList, Menus, ExtCtrls, StdCtrls,
-  DBCtrls, Buttons;
+  upermissions, uclors, uorders, ubroker, ucountries, ucities, uclients,
+  utransactions, ucars, uusers, uchange_pass, udtm, BGRASVGImageList, Classes,
+  SysUtils, DB, Forms, Controls, Graphics, Dialogs, ActnList, Menus, ExtCtrls,
+  StdCtrls, DBCtrls, Buttons;
 
 type
 
@@ -15,6 +16,7 @@ type
 
   Tfrm_main = class(TForm)
     act_colors: TAction;
+    BGRASVGImageList1: TBGRASVGImageList;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     cat_broker: TAction;
@@ -121,6 +123,7 @@ procedure Tfrm_main.actUpdate(AAction: TBasicAction; var Handled: Boolean);
 begin
   act_groups.Enabled:=dtm_login.qry_permissions.FieldByName(can_change_groups).AsBoolean;
   act_users.Enabled:=dtm_login.qry_permissions.FieldByName(can_change_users).AsBoolean;
+  act_orderes.Enabled:=dtm_login.qry_permissionscan_order_c.AsBoolean;
 end;
 
 procedure Tfrm_main.act_carsExecute(Sender: TObject);

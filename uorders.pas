@@ -25,7 +25,6 @@ type
     btn_edit_order1: TBitBtn;
     btn_new_order: TBitBtn;
     btn_new_order1: TBitBtn;
-    DBEdit1: TDBEdit;
     DBGrid2: TDBGrid;
     dts_car_models: TDataSource;
     dts_orders_det: TDataSource;
@@ -33,7 +32,6 @@ type
     DBNavigator1: TDBNavigator;
     DBNavigator2: TDBNavigator;
     dts_ordders: TDataSource;
-    Label1: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
@@ -45,6 +43,7 @@ type
     procedure act_edit_orderExecute(Sender: TObject);
     procedure act_new_carExecute(Sender: TObject);
     procedure act_new_orderExecute(Sender: TObject);
+    procedure act_ordersUpdate(AAction: TBasicAction; var Handled: Boolean);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
   private
@@ -61,7 +60,7 @@ implementation
 {$R *.lfm}
 
 { Tfrm_orders }
-
+ uses udtm;
 procedure Tfrm_orders.FormCreate(Sender: TObject);
 begin
   with dtm do
@@ -128,6 +127,15 @@ begin
   dtm.qry_order.FieldByName('date').AsDateTime:=date();
   frm_edit_orders.ShowModal;
 
+end;
+
+procedure Tfrm_orders.act_ordersUpdate(AAction: TBasicAction;
+  var Handled: Boolean);
+begin
+  act_new_order.Enabled:=dtm_login.qry_permissionscan_order_new.AsBoolean;
+  act_edit_order.Enabled:=dtm_login.qry_permissionscan_order_edit.AsBoolean;
+  act_new_car.Enabled:=dtm_login.qry_permissionscan_order_det_new.AsBoolean;
+  act_change_car.Enabled:=dtm_login.qry_permissionscan_order_det_edit.AsBoolean;
 end;
 
 procedure Tfrm_orders.FormClose(Sender: TObject; var CloseAction: TCloseAction);

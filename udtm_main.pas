@@ -5,13 +5,15 @@ unit udtm_main;
 interface
 
 uses
-  Classes, SysUtils, Menus, DB,udtm, Uni;
+  Classes, SysUtils, Menus, DB,udtm, Uni, BGRAImageList, BGRASVGImageList;
 
 type
 
   { Tdtm }
 
   Tdtm = class(TDataModule)
+    BGRAImageList1: TBGRAImageList;
+    BGRASVGImageList1: TBGRASVGImageList;
     car_brand1: TWideStringField;
     car_name1: TWideStringField;
     city_name: TWideStringField;
@@ -71,6 +73,7 @@ type
     qry_order_detailsdate_of_delivery: TDateField;
     qry_order_detailsdate_of_production: TDateField;
     qry_order_detailsdate_ordered: TDateField;
+    qry_order_detailsdeposit_USD: TFloatField;
     qry_order_detailsfrieght_usd: TFloatField;
     qry_order_detailsid: TLargeintField;
     qry_order_detailsid_car_model: TLongintField;
@@ -78,6 +81,8 @@ type
     qry_order_detailsid_color: TLongintField;
     qry_order_detailsid_order: TLongintField;
     qry_order_detailskm: TLongintField;
+    qry_order_detailsloaded: TBooleanField;
+    qry_order_detailspayed_all: TBooleanField;
     qry_order_detailsprice_usd: TFloatField;
     qry_order_detailsrate: TFloatField;
     qry_order_detailsship_from_id_city: TLongintField;
@@ -90,6 +95,7 @@ type
     qry_transactionsdate_send: TDateField;
     qry_transactionsdate_will_send: TDateField;
     qry_transactionsid: TLargeintField;
+    qry_transactionsid_client: TLongintField;
     qry_transactionsid_user_receive: TLongintField;
     qry_transactionsid_user_send: TLongintField;
     qry_transactionsid_user_will_send: TLongintField;

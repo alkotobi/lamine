@@ -165,17 +165,18 @@ object frm_orders: Tfrm_orders
     end
     object Panel6: TPanel
       Left = 1
-      Height = 146
-      Top = 200
+      Height = 27
+      Top = 319
       Width = 1001
       Align = alBottom
-      ClientHeight = 146
+      AutoSize = True
+      ClientHeight = 27
       ClientWidth = 1001
       TabOrder = 1
       object DBNavigator2: TDBNavigator
-        Left = -1
+        Left = 1
         Height = 25
-        Top = 120
+        Top = 1
         Width = 241
         BevelOuter = bvNone
         ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -191,27 +192,10 @@ object frm_orders: Tfrm_orders
         TabOrder = 0
         VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbPost, nbCancel, nbRefresh]
       end
-      object DBEdit1: TDBEdit
-        Left = 80
-        Height = 21
-        Top = 16
-        Width = 176
-        DataField = 'vin'
-        DataSource = dts_orders_det
-        MaxLength = 0
-        TabOrder = 1
-      end
-      object Label1: TLabel
-        Left = 16
-        Height = 16
-        Top = 20
-        Width = 22
-        Caption = 'VIN'
-      end
     end
     object DBGrid2: TDBGrid
       Left = 1
-      Height = 149
+      Height = 268
       Top = 51
       Width = 1001
       Align = alClient
@@ -296,6 +280,7 @@ object frm_orders: Tfrm_orders
     Top = 180
   end
   object act_orders: TActionList
+    OnUpdate = act_ordersUpdate
     Left = 368
     Top = 240
     object act_new_order: TAction

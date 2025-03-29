@@ -182,4 +182,14 @@ object frm_main: Tfrm_main
     Left = 497
     Top = 153
   end
+  object BGRASVGImageList1: TBGRASVGImageList
+    Width = 16
+    Height = 16
+    Left = 352
+    Top = 153
+    Items = {
+      3C3F786D6C2076657273696F6E3D22312E302220656E636F64696E673D227574
+      662D38223F3E0A3C434F4E46494720436F756E743D2230222F3E0A
+    }
+  end
 end

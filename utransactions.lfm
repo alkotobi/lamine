@@ -19,8 +19,14 @@ object frm_transactions: Tfrm_transactions
     Color = clWindow
     Columns = <    
       item
+        Title.Caption = 'name client'
+        Width = 250
+        FieldName = 'name'
+      end    
+      item
         Title.Caption = 'amount DA'
         FieldName = 'amount'
+        DisplayFormat = '0.00'
       end    
       item
         Title.Caption = 'rate'
@@ -29,10 +35,12 @@ object frm_transactions: Tfrm_transactions
       item
         Title.Caption = 'amount usd'
         FieldName = 'amount_usd'
+        DisplayFormat = '0.00'
       end    
       item
         Title.Caption = 'amount received'
         FieldName = 'amount_received'
+        DisplayFormat = '0.00'
       end    
       item
         Title.Caption = 'date give DA'
@@ -311,24 +319,13 @@ object frm_transactions: Tfrm_transactions
     ClientHeight = 50
     ClientWidth = 1051
     TabOrder = 4
-    object cmb_will_send: TComboBox
-      Left = 176
-      Height = 20
-      Top = 14
-      Width = 100
-      AutoComplete = True
-      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
-      ItemHeight = 24
+    object BitBtn1: TBitBtn
+      Left = 18
+      Height = 30
+      Top = 15
+      Width = 102
+      Action = frm_main.act_clients
       TabOrder = 0
-      OnChange = cmb_will_sendChange
-      OnEnter = cmb_will_sendEnter
-    end
-    object Label10: TLabel
-      Left = 42
-      Height = 22
-      Top = 14
-      Width = 121
-      Caption = 'WHO GIVE DA'
     end
   end
   object dts_transactions: TDataSource

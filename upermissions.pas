@@ -17,9 +17,18 @@ type
     btn_cancel: TButton;
     can_confirm_: TDBCheckBox;
     can_confirm_1: TDBCheckBox;
+    can_confirm_10: TDBCheckBox;
+    can_confirm_11: TDBCheckBox;
+    can_confirm_12: TDBCheckBox;
+    can_confirm_13: TDBCheckBox;
     can_confirm_2: TDBCheckBox;
     can_confirm_3: TDBCheckBox;
     can_confirm_4: TDBCheckBox;
+    can_confirm_5: TDBCheckBox;
+    can_confirm_6: TDBCheckBox;
+    can_confirm_7: TDBCheckBox;
+    can_confirm_8: TDBCheckBox;
+    can_confirm_9: TDBCheckBox;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
     dts_permissions: TDataSource;

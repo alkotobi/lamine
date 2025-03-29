@@ -13,20 +13,24 @@ object frm_edit_orders: Tfrm_edit_orders
   OnCreate = FormCreate
   Position = poDesktopCenter
   object BitBtn1: TBitBtn
-    Left = 280
+    Left = 176
     Height = 30
     Top = 104
-    Width = 107
+    Width = 163
     Caption = 'CANCEL'
+    Images = dtm.BGRAImageList1
+    ImageIndex = 1
     OnClick = BitBtn1Click
     TabOrder = 0
   end
   object BitBtn2: TBitBtn
-    Left = 393
+    Left = 352
     Height = 30
     Top = 104
-    Width = 107
+    Width = 148
     Caption = 'SAVE'
+    Images = dtm.BGRAImageList1
+    ImageIndex = 0
     OnClick = BitBtn2Click
     TabOrder = 1
   end

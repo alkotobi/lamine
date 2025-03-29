@@ -6,17 +6,17 @@ interface
 
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, DBGrids, ExtCtrls,
-  DBCtrls, StdCtrls;
+  DBCtrls, StdCtrls, Buttons;
 
 type
 
   { Tfrm_transactions }
 
   Tfrm_transactions = class(TForm)
+    BitBtn1: TBitBtn;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
-    cmb_will_send: TComboBox;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
@@ -29,7 +29,6 @@ type
     DBMemo3: TDBMemo;
     dts_transactions: TDataSource;
     Label1: TLabel;
-    Label10: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -45,8 +44,6 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
-    procedure cmb_will_sendChange(Sender: TObject);
-    procedure cmb_will_sendEnter(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
 
@@ -72,6 +69,7 @@ begin
     qry_users.Open;
     qry_permissionns.Open;
     qry_transactions.open;
+    qry_clients.Open;
   end;
   pnl_receive.Visible:= dtm_login.qry_permissions.FieldByName(can_confirm_receive).AsBoolean;
   pnl_start.Visible:=dtm_login.qry_permissions.FieldByName(can_confirm_will_send).AsBoolean;
@@ -80,6 +78,7 @@ end;
 
 procedure Tfrm_transactions.Button1Click(Sender: TObject);
 begin
+  dtm.qry_transactions.Append;
   frm_start.ShowModal;
 end;
 
@@ -95,6 +94,7 @@ begin
     showMessage('already confirmed contact admin to change');
     exit;
   end;
+    dtm.qry_transactions.edit;
     frm_receive.ShowModal;
 end;
 
@@ -110,50 +110,8 @@ begin
     showMessage('already confirmed contact admin to change');
     exit;
   end;
+   dtm.qry_transactions.Edit;
    frm_transfer.ShowModal;
-
-end;
-
-procedure Tfrm_transactions.cmb_will_sendChange(Sender: TObject);
-begin
-  if cmb_will_send.ItemIndex >=0 then
-  begin
-    with dtm do
-    begin
-     qry_users.Filter:='name="'+cmb_will_send.Text+'"';
-     if qry_users.findfirst then
-     begin
-       qry_transactions.Filter:='id_user_will_send='+qry_usersid.AsString;
-       qry_transactions.Filtered:=true;
-     end;
-    end;
-  end
-  else
-  begin
-    dtm.qry_transactions.Filtered:=false;
-  end;
-end;
-
-procedure Tfrm_transactions.cmb_will_sendEnter(Sender: TObject);
-begin
-    cmb_will_send.Items.Clear;
-    with dtm do
-begin
-  qry_users.First;
-  while not qry_users.EOF do
-begin
-  qry_groups.Filter := 'id='+qry_usersid_group.AsString;
-  if qry_groups.FindFirst then
-  begin
-    if(qry_permissionns.FieldByName(can_confirm_will_send).AsBoolean=true) then
-    begin
-      cmb_will_send.Items.Add(qry_usersname.AsString);
-    end;
-  end;
-  qry_users.Next;
-end;
-
-end;
 
 end;
 

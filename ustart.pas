@@ -5,7 +5,8 @@ unit ustart;
 interface
 
 uses
-  Classes,DateUtils, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, MaskEdit;
+  Classes, DateUtils, SysUtils, DB, Forms, Controls, Graphics, Dialogs,
+  StdCtrls, MaskEdit, DBCtrls;
 
 type
 
@@ -14,15 +15,17 @@ type
   Tfrm_start = class(TForm)
     Button1: TButton;
     Button2: TButton;
-    edt_amount: TEdit;
+    DBEdit1: TDBEdit;
+    DBMemo1: TDBMemo;
+    dts_clients: TDataSource;
+    DBLookupComboBox1: TDBLookupComboBox;
     Label1: TLabel;
     Label2: TLabel;
-    mem_notes: TMemo;
+    Label3: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure edt_amountKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    procedure edt_amountKeyPress(Sender: TObject; var Key: char);
   private
 
   public
@@ -40,6 +43,7 @@ implementation
     uses udtm_main,udtm;
 procedure Tfrm_start.Button2Click(Sender: TObject);
 begin
+  dtm.qry_transactions.Cancel;
   close;
 end;
 
@@ -61,28 +65,14 @@ begin
 
 end;
 
-procedure Tfrm_start.edt_amountKeyPress(Sender: TObject; var Key: char);
-
-begin
-
-end;
-
 procedure Tfrm_start.Button1Click(Sender: TObject);
 begin
   with dtm do
 begin
-    if(edt_amount.Text ='') then
-  begin
-       ShowMessage('please specify  the amount');
-       exit;
-  end;
-  qry_transactions.Append;
-  qry_transactions.FieldByName(id_user_will_send).AsInteger:=
+    qry_transactionsid_user_will_send.AsInteger:=
   dtm_login.qry_users.FieldByName('id').AsInteger;
-  qry_transactions.FieldByName(date_will_send).AsDateTime:=
+    dtm.qry_transactionsdate_will_send.AsDateTime:=
   LocalTimeToUniversal(date);
-  qry_transactions.FieldByName('amount').AsCurrency:=StrToCurr(edt_amount.Text);
-  qry_transactions.FieldByName(will_send_notes).AsString:=mem_notes.Text;
   qry_transactions.Post;
   close;
 end;

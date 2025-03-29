@@ -10,6 +10,7 @@ object frm_start: Tfrm_start
   Font.Height = -19
   Font.Name = '.SF NS'
   Position = poDesktopCenter
+  LCLVersion = '3.6.0.0'
   object Label1: TLabel
     Left = 16
     Height = 22
@@ -17,27 +18,10 @@ object frm_start: Tfrm_start
     Width = 111
     Caption = 'AMOUNT DA'
   end
-  object edt_amount: TEdit
-    Left = 144
-    Height = 32
-    Top = 8
-    Width = 213
-    TabOrder = 0
-    Text = '0.00'
-    OnKeyDown = edt_amountKeyDown
-    OnKeyPress = edt_amountKeyPress
-  end
-  object mem_notes: TMemo
-    Left = 16
-    Height = 194
-    Top = 72
-    Width = 432
-    TabOrder = 1
-  end
   object Label2: TLabel
     Left = 16
     Height = 22
-    Top = 40
+    Top = 104
     Width = 61
     Caption = 'NOTES'
   end
@@ -47,7 +31,7 @@ object frm_start: Tfrm_start
     Top = 282
     Width = 125
     Caption = 'COONFIRM'
-    TabOrder = 2
+    TabOrder = 0
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -56,7 +40,52 @@ object frm_start: Tfrm_start
     Top = 282
     Width = 125
     Caption = 'CANCEL'
-    TabOrder = 3
+    TabOrder = 1
     OnClick = Button2Click
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 22
+    Top = 48
+    Width = 64
+    Caption = 'CLIENT'
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 144
+    Height = 20
+    Top = 48
+    Width = 216
+    DataField = 'id_client'
+    DataSource = frm_transactions.dts_transactions
+    KeyField = 'id'
+    ListField = 'name'
+    ListFieldIndex = 0
+    ListSource = dts_clients
+    LookupCache = False
+    TabOrder = 2
+  end
+  object DBEdit1: TDBEdit
+    Left = 145
+    Height = 27
+    Top = 14
+    Width = 208
+    DataField = 'amount'
+    DataSource = frm_transactions.dts_transactions
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object DBMemo1: TDBMemo
+    Left = 28
+    Height = 141
+    Top = 139
+    Width = 414
+    DataField = 'will_send_notes'
+    DataSource = frm_transactions.dts_transactions
+    TabOrder = 4
+  end
+  object dts_clients: TDataSource
+    DataSet = dtm.qry_clients
+    Left = 167
+    Top = 101
   end
 end

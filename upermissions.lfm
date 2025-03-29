@@ -2,10 +2,10 @@ object frm_groups: Tfrm_groups
   Left = 293
   Height = 407
   Top = 250
-  Width = 791
+  Width = 1028
   Caption = 'frm_groups'
   ClientHeight = 407
-  ClientWidth = 791
+  ClientWidth = 1028
   Font.CharSet = ANSI_CHARSET
   Font.Height = -19
   Font.Name = '.SF NS'
@@ -54,9 +54,9 @@ object frm_groups: Tfrm_groups
     Left = 32
     Height = 146
     Top = 176
-    Width = 296
+    Width = 928
     ClientHeight = 146
-    ClientWidth = 296
+    ClientWidth = 928
     TabOrder = 2
     object can_confirm_: TDBCheckBox
       Left = 16
@@ -113,6 +113,105 @@ object frm_groups: Tfrm_groups
       TabOrder = 4
       ValueUnchecked = '0'
     end
+    object can_confirm_5: TDBCheckBox
+      Left = 256
+      Height = 23
+      Top = 8
+      Width = 217
+      Caption = 'can_order_c'
+      DataField = 'can_order_c'
+      DataSource = dts_permissions
+      TabOrder = 5
+      ValueUnchecked = '0'
+    end
+    object can_confirm_6: TDBCheckBox
+      Left = 256
+      Height = 23
+      Top = 32
+      Width = 217
+      Caption = 'can_order_det_edit'
+      DataField = 'can_order_det_edit'
+      DataSource = dts_permissions
+      TabOrder = 6
+      ValueUnchecked = '0'
+    end
+    object can_confirm_7: TDBCheckBox
+      Left = 256
+      Height = 23
+      Top = 56
+      Width = 217
+      Caption = 'can_order_det_new'
+      DataField = 'can_order_det_new'
+      DataSource = dts_permissions
+      TabOrder = 7
+      ValueUnchecked = '0'
+    end
+    object can_confirm_8: TDBCheckBox
+      Left = 256
+      Height = 23
+      Top = 80
+      Width = 224
+      Caption = 'can_order_det_set_deposit'
+      DataField = 'can_order_det_set_deposit'
+      DataSource = dts_permissions
+      TabOrder = 8
+      ValueUnchecked = '0'
+    end
+    object can_confirm_9: TDBCheckBox
+      Left = 256
+      Height = 23
+      Top = 104
+      Width = 264
+      Caption = 'can_order_det_set_loaded'
+      DataField = 'can_order_det_set_loaded'
+      DataSource = dts_permissions
+      TabOrder = 9
+      ValueUnchecked = '0'
+    end
+    object can_confirm_10: TDBCheckBox
+      Left = 520
+      Height = 23
+      Top = 8
+      Width = 264
+      Caption = 'can_order_det_set_payed_all'
+      DataField = 'can_order_det_set_payed_all'
+      DataSource = dts_permissions
+      TabOrder = 10
+      ValueUnchecked = '0'
+    end
+    object can_confirm_11: TDBCheckBox
+      Left = 520
+      Height = 23
+      Top = 32
+      Width = 264
+      Caption = 'can_order_det_set_vin'
+      DataField = 'can_order_det_set_vin'
+      DataSource = dts_permissions
+      TabOrder = 11
+      ValueUnchecked = '0'
+    end
+    object can_confirm_12: TDBCheckBox
+      Left = 520
+      Height = 23
+      Top = 56
+      Width = 264
+      Caption = 'can_order_edit'
+      DataField = 'can_order_edit'
+      DataSource = dts_permissions
+      TabOrder = 12
+      ValueUnchecked = '0'
+    end
+    object can_confirm_13: TDBCheckBox
+      Left = 520
+      Height = 23
+      Top = 80
+      Width = 264
+      Caption = 'can_order_new'
+      DataField = 'can_order_new'
+      DataSource = dts_permissions
+      TabOrder = 13
+      ValueUnchecked = '0'
+    end
   end
   object btn_save: TButton
     Left = 256
@@ -133,12 +232,12 @@ object frm_groups: Tfrm_groups
     OnClick = btn_cancelClick
   end
   object dts_groups: TDataSource
-    DataSet = dtm.qry_groups
+    DataSet = dtm_login.qry_groups
     Left = 328
     Top = 96
   end
   object dts_permissions: TDataSource
-    DataSet = dtm.qry_permissionns
+    DataSet = dtm_login.qry_permissions
     Left = 336
     Top = 40
   end
