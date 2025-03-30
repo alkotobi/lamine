@@ -296,15 +296,15 @@ object dtm: Tdtm
       ReadOnly = False
       Required = True
     end
-    object TWideStringField
+    object name_broker: TWideStringField
       FieldKind = fkLookup
-      FieldName = 'name'
+      FieldName = 'name_broker'
       Index = 18
       KeyFields = 'id_client'
       LookupCache = False
-      LookupDataSet = qry_clients
+      LookupDataSet = qry_broker
       LookupKeyFields = 'id'
-      LookupResultField = 'name'
+      LookupResultField = 'broker'
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
@@ -1583,5 +1583,38 @@ object dtm: Tdtm
       Required = True
       Size = 255
     end
+  end
+  object qry_order_achat: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from order_achat'
+    )
+    FilterOptions = []
+    Left = 176
+    Top = 264
+  end
+  object qry_order_achat_details: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_cars_stock'
+    )
+    MasterSource = dts_cars_order
+    FilterOptions = []
+    Left = 224
+    Top = 264
+  end
+  object qry_cars_stock: TUniQuery
+    Connection = dtm_login.conn
+    SQL.Strings = (
+      'select * from tbl_cars_stock'
+    )
+    FilterOptions = []
+    Left = 320
+    Top = 264
+  end
+  object dts_cars_order: TDataSource
+    DataSet = qry_order_achat
+    Left = 144
+    Top = 264
   end
 end

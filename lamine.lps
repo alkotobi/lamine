@@ -7,10 +7,10 @@
       <Unit>
         <Filename Value="lamine.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="16"/>
         <TopLine Value="21"/>
         <CursorPos Y="30"/>
-        <UsageCount Value="177"/>
+        <UsageCount Value="198"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -21,7 +21,7 @@
         <ResourceBaseClass Value="Form"/>
         <TopLine Value="123"/>
         <CursorPos Y="133"/>
-        <UsageCount Value="177"/>
+        <UsageCount Value="198"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -31,10 +31,10 @@
         <ComponentName Value="frm_login"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="15"/>
         <TopLine Value="76"/>
         <CursorPos X="19" Y="94"/>
-        <UsageCount Value="177"/>
+        <UsageCount Value="198"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -44,9 +44,9 @@
         <ComponentName Value="dtm_login"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <CursorPos X="2" Y="10"/>
-        <UsageCount Value="177"/>
+        <UsageCount Value="198"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -56,10 +56,11 @@
         <ComponentName Value="dtm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="163"/>
-        <CursorPos Y="179"/>
-        <UsageCount Value="152"/>
+        <TopLine Value="168"/>
+        <CursorPos Y="184"/>
+        <UsageCount Value="173"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -69,10 +70,10 @@
         <ComponentName Value="frm_groups"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="20"/>
         <TopLine Value="45"/>
         <CursorPos X="34" Y="63"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="173"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -82,10 +83,10 @@
         <ComponentName Value="frm_change_pass"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="21"/>
         <TopLine Value="43"/>
         <CursorPos X="10" Y="61"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="172"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -95,10 +96,10 @@
         <ComponentName Value="frm_users"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="13"/>
         <TopLine Value="20"/>
         <CursorPos X="21" Y="36"/>
-        <UsageCount Value="145"/>
+        <UsageCount Value="166"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -108,11 +109,10 @@
         <ComponentName Value="frm_transactions"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <TopLine Value="85"/>
         <CursorPos X="17" Y="94"/>
-        <UsageCount Value="144"/>
+        <UsageCount Value="165"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -122,10 +122,10 @@
         <ComponentName Value="frm_start"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <TopLine Value="62"/>
         <CursorPos X="30" Y="75"/>
-        <UsageCount Value="141"/>
+        <UsageCount Value="162"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -135,10 +135,10 @@
         <ComponentName Value="frm_transfer"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="12"/>
         <TopLine Value="52"/>
         <CursorPos X="31" Y="59"/>
-        <UsageCount Value="136"/>
+        <UsageCount Value="157"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -148,10 +148,10 @@
         <ComponentName Value="frm_receive"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="16"/>
         <CursorPos X="7" Y="42"/>
-        <UsageCount Value="136"/>
+        <UsageCount Value="157"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -161,10 +161,10 @@
         <ComponentName Value="frm_cars"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="17"/>
         <TopLine Value="107"/>
         <CursorPos X="69" Y="120"/>
-        <UsageCount Value="124"/>
+        <UsageCount Value="145"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -174,10 +174,10 @@
         <ComponentName Value="frm_clients"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="18"/>
         <TopLine Value="40"/>
         <CursorPos Y="53"/>
-        <UsageCount Value="77"/>
+        <UsageCount Value="98"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -190,7 +190,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="23"/>
         <CursorPos X="3" Y="39"/>
-        <UsageCount Value="77"/>
+        <UsageCount Value="98"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -200,10 +200,10 @@
         <ComponentName Value="frm_cities"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="19"/>
         <TopLine Value="29"/>
         <CursorPos X="22" Y="43"/>
-        <UsageCount Value="75"/>
+        <UsageCount Value="96"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -216,7 +216,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="60"/>
         <CursorPos Y="72"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="93"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -226,10 +226,10 @@
         <ComponentName Value="frm_orders"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="64"/>
         <CursorPos X="23" Y="78"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="91"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -239,10 +239,10 @@
         <ComponentName Value="frm_order_detail_edit"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="11"/>
         <TopLine Value="123"/>
         <CursorPos X="80" Y="135"/>
-        <UsageCount Value="56"/>
+        <UsageCount Value="77"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -253,7 +253,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="5"/>
-        <UsageCount Value="49"/>
+        <UsageCount Value="70"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -266,27 +266,20 @@
         <EditorIndex Value="2"/>
         <TopLine Value="21"/>
         <CursorPos X="22" Y="37"/>
-        <UsageCount Value="48"/>
+        <UsageCount Value="69"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="../../../fpcupdeluxe/lazarus/lcl/include/control.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2964"/>
-        <CursorPos Y="2974"/>
-        <UsageCount Value="1"/>
-      </Unit>
-      <Unit>
-        <Filename Value="ustart copy.lfm"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="1"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit>
-      <Unit>
-        <Filename Value="ustart copy.pas"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="1"/>
+        <Filename Value="uachat.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_achat"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="7"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="../../../fpcupdeluxe/lazarus/lcl/lresources.pp"/>
@@ -294,7 +287,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="3156"/>
         <CursorPos Y="3165"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="uorddersss.pas"/>
@@ -302,14 +295,14 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="8" Y="5"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="14"/>
       </Unit>
       <Unit>
         <Filename Value="../../../fpcupdeluxe/fpcsrc/rtl/objpas/classes/classesh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1983"/>
         <CursorPos X="14" Y="1991"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="../../../fpcupdeluxe/lazarus/lcl/dbgrids.pas"/>
@@ -317,26 +310,10 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1382"/>
         <CursorPos Y="1391"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="8"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="28">
-      <Position>
-        <Filename Value="udtm_main.pas"/>
-        <Caret Line="170" TopLine="156"/>
-      </Position>
-      <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="30" TopLine="21"/>
-      </Position>
-      <Position>
-        <Filename Value="udtm_main.pas"/>
-        <Caret Line="170" TopLine="156"/>
-      </Position>
-      <Position>
-        <Filename Value="udtm_main.pas"/>
-        <Caret Line="171" TopLine="156"/>
-      </Position>
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="udtm_main.pas"/>
         <Caret Line="170" TopLine="160"/>
@@ -436,6 +413,25 @@
       <Position>
         <Filename Value="udtm_main.pas"/>
         <Caret Line="179" TopLine="163"/>
+      </Position>
+      <Position>
+        <Filename Value="uachat.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="udtm_main.pas"/>
+        <Caret Line="179" TopLine="163"/>
+      </Position>
+      <Position>
+        <Filename Value="udtm_main.pas"/>
+        <Caret Line="181" TopLine="165"/>
+      </Position>
+      <Position>
+        <Filename Value="udtm_main.pas"/>
+        <Caret Line="182" TopLine="166"/>
+      </Position>
+      <Position>
+        <Filename Value="udtm_main.pas"/>
+        <Caret Line="183" TopLine="167"/>
       </Position>
     </JumpHistory>
     <RunParams>

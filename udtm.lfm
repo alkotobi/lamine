@@ -7,7 +7,7 @@ object dtm_login: Tdtm_login
   object conn: TUniConnection
     LoginPrompt = False
     ProviderName = 'MySQL'
-    Database = 'merhab_lamine'
+    Database = 'merhab_cars'
     SpecificOptions.Strings = (
       'MySQL.UseUnicode=True'
     )

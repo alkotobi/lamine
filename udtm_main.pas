@@ -18,6 +18,7 @@ type
     car_name1: TWideStringField;
     city_name: TWideStringField;
     country_name: TWideStringField;
+    dts_cars_order: TDataSource;
     dts_order: TDataSource;
     dts_groups: TDataSource;
     dts_car_name: TDataSource;
@@ -26,6 +27,7 @@ type
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
     model: TWideStringField;
+    name_broker: TWideStringField;
     name_city_from: TWideStringField;
     name_city_to: TWideStringField;
     order_details_client_name: TWideStringField;
@@ -77,6 +79,8 @@ type
     qry_orderid_broker: TLongintField;
     qry_orderref: TWideStringField;
     qry_ordervirsement: TFloatField;
+    qry_order_achat_details: TUniQuery;
+    qry_cars_stock: TUniQuery;
     qry_order_details: TUniQuery;
     qry_order_detailscolor: TWideStringField;
     qry_order_detailsdate_of_delivery: TDateField;
@@ -134,6 +138,7 @@ type
     qry_broker: TUniQuery;
     qry_order: TUniQuery;
     qry_colors: TUniQuery;
+    qry_order_achat: TUniQuery;
     procedure qry_colorscolorSetText(Sender: TField; const aText: string);
     procedure qry_transactionsCalcFields(DataSet: TDataSet);
   private

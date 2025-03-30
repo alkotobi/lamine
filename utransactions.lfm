@@ -19,9 +19,9 @@ object frm_transactions: Tfrm_transactions
     Color = clWindow
     Columns = <    
       item
-        Title.Caption = 'name client'
+        Title.Caption = 'BROKER'
         Width = 250
-        FieldName = 'name'
+        FieldName = 'name_broker'
       end    
       item
         Title.Caption = 'amount DA'
@@ -324,7 +324,7 @@ object frm_transactions: Tfrm_transactions
       Height = 30
       Top = 15
       Width = 102
-      Action = frm_main.act_clients
+      Action = frm_main.cat_broker
       TabOrder = 0
     end
   end

@@ -1,0 +1,90 @@
+object frm_achat: Tfrm_achat
+  Left = 333
+  Height = 430
+  Top = 250
+  Width = 1016
+  Caption = 'frm_achat'
+  ClientHeight = 430
+  ClientWidth = 1016
+  object Panel1: TPanel
+    Left = 0
+    Height = 290
+    Top = 0
+    Width = 1016
+    Align = alTop
+    ClientHeight = 290
+    ClientWidth = 1016
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 1
+      Height = 50
+      Top = 1
+      Width = 1014
+      Align = alTop
+      ClientHeight = 50
+      ClientWidth = 1014
+      TabOrder = 0
+      object btn_edit_order: TBitBtn
+        Left = 8
+        Height = 30
+        Top = 8
+        Width = 139
+        TabOrder = 0
+      end
+      object btn_new_order: TBitBtn
+        Left = 152
+        Height = 30
+        Top = 8
+        Width = 139
+        TabOrder = 1
+      end
+      object btn_client2: TBitBtn
+        Left = 296
+        Height = 30
+        Top = 8
+        Width = 96
+        Action = frm_main.cat_broker
+        TabOrder = 2
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 50
+      Top = 239
+      Width = 1014
+      Align = alBottom
+      ClientHeight = 50
+      ClientWidth = 1014
+      TabOrder = 1
+      object DBNavigator1: TDBNavigator
+        Left = 8
+        Height = 25
+        Top = 11
+        Width = 241
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 241
+        Options = []
+        TabOrder = 0
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbPost, nbCancel, nbRefresh]
+      end
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 188
+      Top = 51
+      Width = 1014
+      Align = alClient
+      Color = clWindow
+      Columns = <>
+      ReadOnly = True
+      TabOrder = 2
+    end
+  end
+end
