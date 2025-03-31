@@ -176,7 +176,7 @@
         <EditorIndex Value="19"/>
         <TopLine Value="40"/>
         <CursorPos Y="53"/>
-        <UsageCount Value="154"/>
+        <UsageCount Value="162"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -189,7 +189,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="23"/>
         <CursorPos X="3" Y="39"/>
-        <UsageCount Value="154"/>
+        <UsageCount Value="162"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -202,7 +202,7 @@
         <EditorIndex Value="20"/>
         <TopLine Value="30"/>
         <CursorPos X="22" Y="44"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="160"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -215,7 +215,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="60"/>
         <CursorPos Y="72"/>
-        <UsageCount Value="149"/>
+        <UsageCount Value="157"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -228,7 +228,7 @@
         <EditorIndex Value="7"/>
         <TopLine Value="108"/>
         <CursorPos X="3" Y="110"/>
-        <UsageCount Value="147"/>
+        <UsageCount Value="155"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -238,11 +238,10 @@
         <ComponentName Value="frm_order_detail_edit"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="10"/>
-        <TopLine Value="93"/>
-        <CursorPos X="22" Y="105"/>
-        <UsageCount Value="133"/>
+        <TopLine Value="128"/>
+        <CursorPos X="3" Y="133"/>
+        <UsageCount Value="141"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -253,7 +252,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="126"/>
+        <UsageCount Value="134"/>
       </Unit>
       <Unit>
         <Filename Value="uclors.pas"/>
@@ -264,7 +263,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="21"/>
         <CursorPos X="22" Y="37"/>
-        <UsageCount Value="125"/>
+        <UsageCount Value="133"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -274,10 +273,11 @@
         <ComponentName Value="frm_achat"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="5"/>
-        <CursorPos X="28" Y="14"/>
-        <UsageCount Value="77"/>
+        <TopLine Value="15"/>
+        <CursorPos X="15" Y="33"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -290,7 +290,7 @@
         <EditorIndex Value="11"/>
         <TopLine Value="66"/>
         <CursorPos X="3" Y="77"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="33"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -300,7 +300,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="3150"/>
         <CursorPos Y="3165"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="uorddersss.pas"/>
@@ -308,14 +308,14 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="8" Y="5"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit>
       <Unit>
         <Filename Value="../../../fpcupdeluxe/fpcsrc/rtl/objpas/classes/classesh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1983"/>
         <CursorPos X="14" Y="1991"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit>
       <Unit>
         <Filename Value="../../../fpcupdeluxe/lazarus/lcl/dbgrids.pas"/>
@@ -323,137 +323,137 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1382"/>
         <CursorPos Y="1391"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit>
       <Unit>
         <Filename Value="../../../fpcupdeluxe/lazarus/lcl/include/application.inc"/>
         <EditorIndex Value="17"/>
         <TopLine Value="2224"/>
         <CursorPos Y="2234"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="30" TopLine="18"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="16" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="31" TopLine="18"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="17" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="../../../fpcupdeluxe/lazarus/lcl/include/application.inc"/>
-        <Caret Line="2234" TopLine="2224"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="16" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="32" TopLine="18"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="17" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="../../../fpcupdeluxe/lazarus/lcl/include/application.inc"/>
-        <Caret Line="2234" TopLine="2224"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="18" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="33" TopLine="18"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="17" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="34" TopLine="22"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="16" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="35" TopLine="22"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="17" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="36" TopLine="22"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="18" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="37" TopLine="22"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="17" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="38" TopLine="22"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="18" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="39" TopLine="22"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="19" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="66" Column="3" TopLine="60"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="21" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="uorders.pas"/>
-        <Caret Line="104" Column="3" TopLine="91"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="22" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="65" TopLine="61"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="23" Column="15" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="lamine.lpr"/>
-        <Caret Line="30" TopLine="22"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="24" Column="15" TopLine="6"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="65" TopLine="61"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="23" Column="15" TopLine="6"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="66" TopLine="61"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="28" Column="15" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="67" TopLine="61"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="27" Column="15" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="68" TopLine="61"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="26" Column="15" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="69" TopLine="61"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="25" Column="15" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="70" TopLine="61"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="24" Column="15" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="71" TopLine="61"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="23" Column="15" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="ucars_stock.pas"/>
-        <Caret Line="74" Column="53" TopLine="66"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="28" Column="15" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="uorder_det_edit.pas"/>
-        <Caret Line="96" Column="65" TopLine="150"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="27" Column="15" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="uorders.pas"/>
-        <Caret Line="87" Column="10" TopLine="75"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="28" Column="15" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="uorder_det_edit.pas"/>
-        <Caret Line="100" Column="20" TopLine="90"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="29" Column="15" TopLine="11"/>
       </Position>
       <Position>
-        <Filename Value="uorder_det_edit.pas"/>
-        <Caret Line="116" Column="7" TopLine="108"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="30" Column="15" TopLine="12"/>
       </Position>
       <Position>
-        <Filename Value="uorder_det_edit.pas"/>
-        <Caret Line="95" Column="3" TopLine="93"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="31" Column="15" TopLine="13"/>
       </Position>
       <Position>
-        <Filename Value="uorder_det_edit.pas"/>
-        <Caret Line="116" Column="24" TopLine="108"/>
+        <Filename Value="uachat.pas"/>
+        <Caret Line="32" Column="15" TopLine="14"/>
       </Position>
     </JumpHistory>
     <RunParams>

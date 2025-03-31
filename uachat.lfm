@@ -1,7 +1,246 @@
 object frm_achat: Tfrm_achat
   Left = 333
-  Height = 430
+  Height = 498
   Top = 250
-  Width = 1016
+  Width = 1033
   Caption = 'frm_achat'
+  ClientHeight = 498
+  ClientWidth = 1033
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  object Panel2: TPanel
+    Left = 0
+    Height = 238
+    Top = 0
+    Width = 1033
+    Align = alTop
+    ClientHeight = 238
+    ClientWidth = 1033
+    TabOrder = 0
+    object Panel3: TPanel
+      Left = 1
+      Height = 50
+      Top = 1
+      Width = 1031
+      Align = alTop
+      TabOrder = 0
+    end
+    object Panel1: TPanel
+      Left = 1
+      Height = 136
+      Top = 51
+      Width = 1031
+      Align = alClient
+      ClientHeight = 136
+      ClientWidth = 1031
+      TabOrder = 1
+      object DBGrid1: TDBGrid
+        Left = 1
+        Height = 134
+        Top = 1
+        Width = 1029
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'id'
+            FieldName = 'id'
+          end        
+          item
+            Title.Caption = 'id_supplier'
+            FieldName = 'id_supplier'
+          end        
+          item
+            Title.Caption = 'date'
+            FieldName = 'date'
+          end        
+          item
+            Title.Caption = 'vin_get_date'
+            FieldName = 'vin_get_date'
+          end        
+          item
+            Title.Caption = 'supp_get_cars_date'
+            FieldName = 'supp_get_cars_date'
+          end        
+          item
+            Title.Caption = 'delivery_to_port_date'
+            FieldName = 'delivery_to_port_date'
+          end        
+          item
+            Title.Caption = 'amount'
+            FieldName = 'amount'
+          end        
+          item
+            Title.Caption = 'deposit'
+            FieldName = 'deposit'
+          end        
+          item
+            Title.Caption = 'name_supplier'
+            FieldName = 'name_supplier'
+          end>
+        DataSource = dts_achat
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object Panel4: TPanel
+      Left = 1
+      Height = 50
+      Top = 187
+      Width = 1031
+      Align = alBottom
+      TabOrder = 2
+    end
+  end
+  object Panel5: TPanel
+    Left = 0
+    Height = 238
+    Top = 238
+    Width = 1033
+    Align = alTop
+    ClientHeight = 238
+    ClientWidth = 1033
+    TabOrder = 1
+    object Panel6: TPanel
+      Left = 1
+      Height = 50
+      Top = 1
+      Width = 1031
+      Align = alTop
+      TabOrder = 0
+    end
+    object Panel7: TPanel
+      Left = 1
+      Height = 136
+      Top = 51
+      Width = 1031
+      Align = alClient
+      ClientHeight = 136
+      ClientWidth = 1031
+      TabOrder = 1
+      object DBGrid2: TDBGrid
+        Left = 1
+        Height = 134
+        Top = 1
+        Width = 1029
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'id'
+            FieldName = 'id'
+          end        
+          item
+            Title.Caption = 'id_car_model'
+            FieldName = 'id_car_model'
+          end        
+          item
+            Title.Caption = 'vin'
+            FieldName = 'vin'
+          end        
+          item
+            Title.Caption = 'date_of_production'
+            FieldName = 'date_of_production'
+          end        
+          item
+            Title.Caption = 'km'
+            FieldName = 'km'
+          end        
+          item
+            Title.Caption = 'date_of_delivery'
+            FieldName = 'date_of_delivery'
+          end        
+          item
+            Title.Caption = 'date_ordered'
+            FieldName = 'date_ordered'
+          end        
+          item
+            Title.Caption = 'ship_to_id_city'
+            FieldName = 'ship_to_id_city'
+          end        
+          item
+            Title.Caption = 'ship_from_id_city'
+            FieldName = 'ship_from_id_city'
+          end        
+          item
+            Title.Caption = 'price_usd'
+            FieldName = 'price_usd'
+          end        
+          item
+            Title.Caption = 'id_color'
+            FieldName = 'id_color'
+          end        
+          item
+            Title.Caption = 'taken'
+            FieldName = 'taken'
+          end        
+          item
+            Title.Caption = 'id_supplier'
+            FieldName = 'id_supplier'
+          end        
+          item
+            Title.Caption = 'id_order_achat'
+            FieldName = 'id_order_achat'
+          end        
+          item
+            Title.Caption = 'id_order_vente'
+            FieldName = 'id_order_vente'
+          end        
+          item
+            Title.Caption = 'price_achat'
+            FieldName = 'price_achat'
+          end        
+          item
+            Title.Caption = 'loaded'
+            FieldName = 'loaded'
+          end        
+          item
+            Title.Caption = 'freight'
+            FieldName = 'freight'
+          end        
+          item
+            Title.Caption = 'id_owner'
+            FieldName = 'id_owner'
+          end>
+        DataSource = dts_achat_det
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object Panel8: TPanel
+      Left = 1
+      Height = 50
+      Top = 187
+      Width = 1031
+      Align = alBottom
+      TabOrder = 2
+    end
+  end
+  object ActionList1: TActionList
+    Left = 696
+    Top = 40
+    object act_new_order: TAction
+      Caption = 'NEW ORDER'
+    end
+    object act_edit_order: TAction
+      Caption = 'EDIT ORDER'
+    end
+    object act_new_cars: TAction
+      Caption = 'NEW CARS'
+    end
+    object act_edit_cars: TAction
+      Caption = 'act_edit_cars'
+    end
+  end
+  object dts_achat: TDataSource
+    DataSet = dtm.qry_order_achat
+    Left = 776
+    Top = 8
+  end
+  object dts_achat_det: TDataSource
+    DataSet = dtm.qry_order_achat_details
+    Left = 865
+    Top = 280
+  end
 end

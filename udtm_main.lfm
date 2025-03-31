@@ -1296,6 +1296,7 @@ object dtm: Tdtm
       'JOIN tbl_countries ON tbl_cities.id_country = tbl_countries.id'
       'WHERE tbl_countries.name = ''china'';'
     )
+    Active = True
     FilterOptions = []
     Left = 616
     Top = 272
@@ -1421,9 +1422,17 @@ object dtm: Tdtm
       'select * from tbl_cars_stock'
     )
     MasterSource = dts_cars_order
+    MasterFields = 'id'
+    DetailFields = 'id_order_achat'
     FilterOptions = []
-    Left = 184
+    Left = 168
     Top = 352
+    ParamData = <    
+      item
+        DataType = ftLargeint
+        Name = 'id'
+        ParamType = ptInput
+      end>
     object qry_order_achat_detailsid: TLargeintField
       FieldKind = fkData
       FieldName = 'id'
@@ -1612,6 +1621,7 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_suppliers'
     )
+    Active = True
     FilterOptions = []
     Left = 384
     Top = 352
@@ -1724,6 +1734,7 @@ object dtm: Tdtm
     SQL.Strings = (
       'select * from tbl_companies'
     )
+    Active = True
     FilterOptions = []
     Left = 480
     Top = 358
@@ -2087,7 +2098,7 @@ object dtm: Tdtm
     )
     DetailFields = 'id_order_vente'
     FilterOptions = []
-    Left = 304
+    Left = 296
     Top = 344
     object qry_cars_stockid2: TLargeintField
       FieldKind = fkData
