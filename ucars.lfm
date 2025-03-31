@@ -11,6 +11,7 @@ object frm_cars: Tfrm_cars
   Font.Name = '.SF NS'
   OnClose = FormClose
   OnCreate = FormCreate
+  Position = poDesktopCenter
   object Panel1: TPanel
     Left = 0
     Height = 136

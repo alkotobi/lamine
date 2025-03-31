@@ -94,6 +94,9 @@ object frm_orders: Tfrm_orders
           FieldName = 'id'
         end      
         item
+          PickList.Strings = (
+            'LAMINE'
+          )
           Title.Caption = 'broker'
           Width = 250
           FieldName = 'broker'
@@ -203,73 +206,96 @@ object frm_orders: Tfrm_orders
       Color = clWindow
       Columns = <      
         item
-          PickList.Strings = (
-            'merhab noureddine'
-            'sofia'
-            'merhab mohamed'
-          )
-          Title.Caption = 'client_name'
-          FieldName = 'client_name'
+          Title.Caption = 'id'
+          FieldName = 'id'
         end      
         item
-          PickList.Strings = (
-            'TOYOTA COROLLA 1.5'
-            'VW golf 280TSI'
-            'VW T-ROC 300 TSI'
-          )
-          Title.Caption = 'model'
-          FieldName = 'model'
+          Title.Caption = 'id_car_model'
+          FieldName = 'id_car_model'
         end      
         item
-          Title.Caption = 'color'
-          Width = 80
-          FieldName = 'color'
+          Title.Caption = 'vin'
+          FieldName = 'vin'
         end      
         item
           Title.Caption = 'date_of_production'
-          Width = 130
           FieldName = 'date_of_production'
         end      
         item
           Title.Caption = 'km'
-          Width = 50
           FieldName = 'km'
-        end      
-        item
-          Title.Caption = 'date_ordered'
-          FieldName = 'date_ordered'
         end      
         item
           Title.Caption = 'date_of_delivery'
           FieldName = 'date_of_delivery'
         end      
         item
+          Title.Caption = 'date_ordered'
+          FieldName = 'date_ordered'
+        end      
+        item
+          Title.Caption = 'ship_to_id_city'
+          FieldName = 'ship_to_id_city'
+        end      
+        item
+          Title.Caption = 'ship_from_id_city'
+          FieldName = 'ship_from_id_city'
+        end      
+        item
           Title.Caption = 'price_usd'
           FieldName = 'price_usd'
         end      
         item
-          Title.Caption = 'frieght_usd'
-          FieldName = 'frieght_usd'
+          Title.Caption = 'id_color'
+          FieldName = 'id_color'
         end      
         item
-          PickList.Strings = (
-            'mascara'
-            'oran'
-          )
-          Title.Caption = 'name_city_to'
-          FieldName = 'name_city_to'
+          Title.Caption = 'taken'
+          FieldName = 'taken'
         end      
         item
-          Title.Caption = 'rate'
-          FieldName = 'rate'
+          Title.Caption = 'id_supplier'
+          FieldName = 'id_supplier'
         end      
         item
-          PickList.Strings = (
-            'mascara'
-            'oran'
-          )
-          Title.Caption = 'name_city_from'
-          FieldName = 'name_city_from'
+          Title.Caption = 'id_order_achat'
+          FieldName = 'id_order_achat'
+        end      
+        item
+          Title.Caption = 'id_order_vente'
+          FieldName = 'id_order_vente'
+        end      
+        item
+          Title.Caption = 'price_achat'
+          FieldName = 'price_achat'
+        end      
+        item
+          Title.Caption = 'loaded'
+          FieldName = 'loaded'
+        end      
+        item
+          Title.Caption = 'freight'
+          FieldName = 'freight'
+        end      
+        item
+          Title.Caption = 'id_owner'
+          FieldName = 'id_owner'
+        end      
+        item
+          Title.Caption = 'car_info'
+          FieldName = 'car_info'
+        end      
+        item
+          Title.Caption = 'name_supplier'
+          FieldName = 'name_supplier'
+        end      
+        item
+          Title.Caption = 'color'
+          FieldName = 'color'
+        end      
+        item
+          Title.Caption = 'name_owner'
+          FieldName = 'name_owner'
         end>
       DataSource = dts_orders_det
       ReadOnly = True

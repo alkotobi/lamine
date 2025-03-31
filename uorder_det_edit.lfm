@@ -10,6 +10,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
   Font.Height = -19
   Font.Name = '.SF NS'
   OnClose = FormClose
+  OnCreate = FormCreate
   Position = poDesktopCenter
   object Panel1: TPanel
     Left = 0
@@ -34,7 +35,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       Width = 231
       AutoComplete = True
       CharCase = ecUppercase
-      DataField = 'id_client'
+      DataField = 'id_owner'
       DataSource = frm_orders.dts_orders_det
       KeyField = 'id'
       ListField = 'name'
@@ -74,7 +75,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       DataField = 'vin'
       DataSource = frm_orders.dts_orders_det
       ReadOnly = True
-      MaxLength = 0
+      MaxLength = 50
       TabOrder = 2
     end
     object Label3: TLabel
@@ -103,7 +104,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       NumGlyphs = 1
       MaxLength = 10
       TabOrder = 3
-      Text = '  /  /    '
+      Text = '30/12/1899'
       DataField = 'date_ordered'
       DataSource = frm_orders.dts_orders_det
     end
@@ -132,7 +133,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       NumGlyphs = 1
       MaxLength = 10
       TabOrder = 4
-      Text = '  /  /    '
+      Text = '30/12/1899'
       DataField = 'date_of_production'
       DataSource = frm_orders.dts_orders_det
     end
@@ -154,7 +155,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       NumGlyphs = 1
       MaxLength = 10
       TabOrder = 5
-      Text = '  /  /    '
+      Text = '30/12/1899'
       DataField = 'date_of_delivery'
       DataSource = frm_orders.dts_orders_det
     end
@@ -172,6 +173,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       Width = 176
       DataField = 'km'
       DataSource = frm_orders.dts_orders_det
+      Alignment = taRightJustify
       MaxLength = 0
       TabOrder = 6
     end
@@ -228,6 +230,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       Width = 176
       DataField = 'price_usd'
       DataSource = frm_orders.dts_orders_det
+      Alignment = taRightJustify
       MaxLength = 0
       TabOrder = 9
     end
@@ -252,6 +255,7 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       Width = 176
       DataField = 'rate'
       DataSource = frm_orders.dts_orders_det
+      Alignment = taRightJustify
       MaxLength = 0
       TabOrder = 10
     end
@@ -267,8 +271,9 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       Height = 27
       Top = 216
       Width = 176
-      DataField = 'frieght_usd'
+      DataField = 'freight'
       DataSource = frm_orders.dts_orders_det
+      Alignment = taRightJustify
       MaxLength = 0
       TabOrder = 11
     end
@@ -277,9 +282,10 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       Height = 27
       Top = 200
       Width = 230
-      DataField = 'deposit_USD'
+      DataField = 'deposit_from_client'
       DataSource = frm_orders.dts_orders_det
       ReadOnly = True
+      Alignment = taRightJustify
       MaxLength = 0
       TabOrder = 12
     end
@@ -308,41 +314,31 @@ object frm_order_detail_edit: Tfrm_order_detail_edit
       Top = 232
       Width = 154
       Caption = 'PAYED'
-      DataField = 'payed_all'
+      DataField = 'payed_from_client'
       DataSource = frm_orders.dts_orders_det
       ReadOnly = True
       TabOrder = 14
       ValueUnchecked = '0'
     end
-    object DBEdit1: TDBEdit
-      Left = 468
-      Height = 27
-      Top = 128
-      Width = 80
-      DataField = 'id_color'
-      DataSource = frm_orders.dts_orders_det
-      MaxLength = 0
-      TabOrder = 15
-    end
   end
-  object BitBtn1: TBitBtn
+  object btn_apply: TBitBtn
     Left = 712
     Height = 30
     Top = 267
     Width = 73
     Images = dtm.BGRAImageList1
     ImageIndex = 0
-    OnClick = BitBtn1Click
+    OnClick = btn_applyClick
     TabOrder = 1
   end
-  object BitBtn2: TBitBtn
+  object btn_cancel: TBitBtn
     Left = 712
     Height = 30
     Top = 304
     Width = 73
     Images = dtm.BGRAImageList1
     ImageIndex = 1
-    OnClick = BitBtn2Click
+    OnClick = btn_cancelClick
     TabOrder = 2
   end
   object dbcmb_client1: TDBLookupComboBox

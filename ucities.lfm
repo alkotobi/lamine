@@ -39,7 +39,7 @@ object frm_cities: Tfrm_cities
     TabOrder = 0
   end
   object DBNavigator1: TDBNavigator
-    Left = 48
+    Left = 8
     Height = 25
     Top = 200
     Width = 241
@@ -55,6 +55,14 @@ object frm_cities: Tfrm_cities
     DataSource = dts_cities
     Options = []
     TabOrder = 1
+  end
+  object BitBtn1: TBitBtn
+    Left = 264
+    Height = 30
+    Top = 200
+    Width = 88
+    Action = frm_main.act_countries
+    TabOrder = 2
   end
   object dts_cities: TDataSource
     DataSet = dtm.qry_cities

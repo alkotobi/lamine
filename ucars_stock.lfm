@@ -1,0 +1,151 @@
+object frm_cars_stock: Tfrm_cars_stock
+  Left = 333
+  Height = 269
+  Top = 250
+  Width = 1162
+  Caption = 'frm_cars_stock'
+  ClientHeight = 269
+  ClientWidth = 1162
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = '.SF NS'
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 200
+    Top = 32
+    Width = 1162
+    Align = alTop
+    Color = clWindow
+    Columns = <    
+      item
+        PickList.Strings = (
+          'TOYOTA HELIX GR SPORT'
+          'VW T-ROC STARLIGHT'
+        )
+        Title.Caption = 'car_info'
+        Width = 180
+        FieldName = 'car_info'
+      end    
+      item
+        PickList.Strings = (
+          'WHITE'
+        )
+        Title.Caption = 'color'
+        Width = 120
+        FieldName = 'color'
+      end    
+      item
+        Title.Caption = 'vin'
+        Width = 150
+        FieldName = 'vin'
+      end    
+      item
+        Title.Caption = 'date_of_production'
+        Width = 120
+        FieldName = 'date_of_production'
+      end    
+      item
+        Title.Caption = 'km'
+        Width = 80
+        FieldName = 'km'
+      end    
+      item
+        Title.Caption = 'date_of_delivery'
+        Width = 120
+        FieldName = 'date_of_delivery'
+      end    
+      item
+        Title.Caption = 'date_ordered'
+        Width = 130
+        FieldName = 'date_ordered'
+      end    
+      item
+        Title.Caption = 'price_usd'
+        FieldName = 'price_usd'
+      end    
+      item
+        Title.Caption = 'price_achat'
+        FieldName = 'price_achat'
+      end>
+    DataSource = dts_car_stock
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 8
+    Height = 25
+    Top = 200
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dts_car_stock
+    Options = []
+    TabOrder = 1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 32
+    Top = 0
+    Width = 1162
+    Align = alTop
+    ClientHeight = 32
+    ClientWidth = 1162
+    TabOrder = 2
+    object edt_car_filter: TEdit
+      Left = 113
+      Height = 27
+      Top = 3
+      Width = 264
+      TabOrder = 0
+      OnChange = edt_car_filterChange
+    end
+    object Label1: TLabel
+      Left = 1
+      Height = 22
+      Top = 6
+      Width = 99
+      Caption = 'CAR FILTER'
+    end
+    object Label2: TLabel
+      Left = 393
+      Height = 22
+      Top = 5
+      Width = 93
+      Caption = 'VIN FILTER'
+    end
+    object edt_vin_filter: TEdit
+      Left = 505
+      Height = 27
+      Top = 1
+      Width = 264
+      TabOrder = 1
+      OnChange = edt_car_filterChange
+    end
+  end
+  object BitBtn1: TBitBtn
+    Left = 968
+    Height = 30
+    Top = 232
+    Width = 96
+    Caption = 'SELECT'
+    OnClick = BitBtn1Click
+    TabOrder = 3
+  end
+  object dts_car_stock: TDataSource
+    DataSet = dtm.qry_cars_stock
+    Left = 730
+    Top = 142
+  end
+end

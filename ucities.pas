@@ -6,13 +6,14 @@ interface
 
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, DBGrids, DBCtrls,
-  udtm_main;
+  Buttons, udtm_main;
 
 type
 
   { Tfrm_cities }
 
   Tfrm_cities = class(TForm)
+    BitBtn1: TBitBtn;
     dts_cities: TDataSource;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;

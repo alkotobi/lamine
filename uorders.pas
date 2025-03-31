@@ -7,7 +7,7 @@ interface
 uses
   Classes, udtm_main, SysUtils, DB, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, ActnList, Buttons, DBGrids, DBCtrls, StdCtrls, DBDateTimePicker,
-  uorders_edit, DateUtils,uorder_det_edit,ucars;
+  uorders_edit, DateUtils, uorder_det_edit, ucars;
 
 type
 
@@ -43,7 +43,7 @@ type
     procedure act_edit_orderExecute(Sender: TObject);
     procedure act_new_carExecute(Sender: TObject);
     procedure act_new_orderExecute(Sender: TObject);
-    procedure act_ordersUpdate(AAction: TBasicAction; var Handled: Boolean);
+    procedure act_ordersUpdate(AAction: TBasicAction; var Handled: boolean);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
   private
@@ -60,7 +60,8 @@ implementation
 {$R *.lfm}
 
 { Tfrm_orders }
- uses udtm;
+uses udtm, ucars_stock;
+
 procedure Tfrm_orders.FormCreate(Sender: TObject);
 begin
   with dtm do
@@ -68,20 +69,20 @@ begin
     qry_clients.Open;
     qry_order.Open;
     qry_order_details.Open;
-    qry_brands.open;
+    qry_brands.Open;
     qry_car_names.Open;
     qry_car_models.Open;
     qry_cities.Open;
     qry_colors.Open;
     qry_car_info.Open;
-    qry_cities_alg.open;
-    qry_cities_cn.open;
+    qry_cities_alg.Open;
+    qry_cities_cn.Open;
   end;
 end;
 
 procedure Tfrm_orders.act_edit_orderExecute(Sender: TObject);
 begin
-    if not Assigned(frm_edit_orders) then
+  if not Assigned(frm_edit_orders) then
   begin
     Application.CreateForm(Tfrm_edit_orders, frm_edit_orders);
   end;
@@ -91,32 +92,36 @@ end;
 
 procedure Tfrm_orders.act_new_carExecute(Sender: TObject);
 begin
-      if not Assigned(frm_order_detail_edit) then
+  if dtm.qry_order.IsEmpty then
   begin
-    Application.CreateForm(Tfrm_order_detail_edit, frm_order_detail_edit);
+    ShowMessage('there is no active order!!');
+    exit;
   end;
-    dtm.qry_order_details.Append;
-    dtm.qry_order_details.FieldByName('date_ordered').AsDateTime:=date;
-    frm_order_detail_edit.ShowModal;
+  if not Assigned(frm_cars_stock) then
+  begin
+    Application.CreateForm(Tfrm_cars_stock, frm_cars_stock);
+  end;
+  frm_cars_stock.id_order := dtm.qry_orderid.AsInteger;
+  frm_cars_stock.ShowModal;
 end;
 
 procedure Tfrm_orders.act_change_carExecute(Sender: TObject);
 begin
-    if not Assigned(frm_order_detail_edit) then
+  if not Assigned(frm_order_detail_edit) then
   begin
     Application.CreateForm(Tfrm_order_detail_edit, frm_order_detail_edit);
   end;
-    dtm.qry_order_details.edit;
-    frm_order_detail_edit.ShowModal;
+  dtm.qry_order_details.edit;
+  frm_order_detail_edit.ShowModal;
 end;
 
 procedure Tfrm_orders.act_clientsExecute(Sender: TObject);
 begin
-      if not Assigned(frm_cars) then
+  if not Assigned(frm_cars) then
   begin
     Application.CreateForm(Tfrm_cars, frm_cars);
   end;
-      frm_cars.showModal;
+  frm_cars.showModal;
 end;
 
 procedure Tfrm_orders.act_new_orderExecute(Sender: TObject);
@@ -126,29 +131,27 @@ begin
     Application.CreateForm(Tfrm_edit_orders, frm_edit_orders);
   end;
   dtm.qry_order.Append;
-  dtm.qry_order.FieldByName('date').AsDateTime:=date();
+  dtm.qry_order.FieldByName('date').AsDateTime := date();
   frm_edit_orders.ShowModal;
 
 end;
 
-procedure Tfrm_orders.act_ordersUpdate(AAction: TBasicAction;
-  var Handled: Boolean);
+procedure Tfrm_orders.act_ordersUpdate(AAction: TBasicAction; var Handled: boolean);
 begin
-  act_new_order.Enabled:=dtm_login.qry_permissionscan_order_new.AsBoolean;
-  act_edit_order.Enabled:=dtm_login.qry_permissionscan_order_edit.AsBoolean;
-  act_new_car.Enabled:=dtm_login.qry_permissionscan_order_det_new.AsBoolean;
-  act_change_car.Enabled:=dtm_login.qry_permissionscan_order_det_edit.AsBoolean;
+  act_new_order.Enabled := dtm_login.qry_permissionscan_order_new.AsBoolean;
+  act_edit_order.Enabled := dtm_login.qry_permissionscan_order_edit.AsBoolean;
+  act_new_car.Enabled := dtm_login.qry_permissionscan_order_det_new.AsBoolean;
+  act_change_car.Enabled := dtm_login.qry_permissionscan_order_det_edit.AsBoolean;
 end;
 
 procedure Tfrm_orders.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-  if (dtm.qry_order.State in dsEditModes) or
-  (dtm.qry_order_details.State in dsEditModes) then
+  if (dtm.qry_order.State in dsEditModes) or (dtm.qry_order_details.State in
+    dsEditModes) then
   begin
-    showMessage('please save all changes before close the form');
-    CloseAction:=TCloseAction.caNone;
+    ShowMessage('please save all changes before close the form');
+    CloseAction := TCloseAction.caNone;
   end;
 end;
 
 end.
-
